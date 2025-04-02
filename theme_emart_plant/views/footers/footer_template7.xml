@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="theme_common_footer7" inherit_id="website.layout" name="Footer Seven" active="False">
+       	<xpath expr="//div[@id='footer']" position="replace">
+       		<div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+				<section id="footer_theme_common7" class="footer_theme_common7 o_footer">
+					<section class="footer-section pt48 bg-white">
+						<div class="container-fluid">
+							<div class="row justify-content-center">
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">Quick Links</h6>
+										<p><a href="#">Home</a></p>
+										<p><a href="#">Contact Us</a></p>
+										<p><a href="#">About Us</a></p>
+										<p><a href="#">Policy</a></p>
+										<p><a href="#">FAQ</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">Plants By Name</h6>
+										<p><a href="#">Money Plants</a></p>
+										<p><a href="#">Jade Plants</a></p>
+										<p><a href="#">Syngonium</a></p>
+										<p><a href="#">View all</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">By Types</h6>
+										<p><a href="#">Artificial Plants</a></p>
+										<p><a href="#">Desktop Plants</a></p>
+										<p><a href="#">Jade Plants</a></p>
+										<p><a href="#">View all</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">Others</h6>
+										<p><a href="#">Same Day Plants</a></p>
+										<p><a href="#">Flexon</a></p>
+										<p><a href="#">Michael</a></p>
+										<p><a href="#">View all</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">By Price</h6>
+										<p><a href="#">Premium Plants</a></p>
+										<p><a href="#">Best Seller</a></p>
+										<p><a href="#">New Arrivals</a></p>
+										<p><a href="#">View all</a></p>
+									</div>
+								</div>
+								<div class="col-md-4 mb-4 mb-lg-0 col-lg-2 col-6">
+									<div class="footer-links">
+										<h6 class="">Explore By Colors</h6>
+										<p><a href="#">Green</a></p>
+										<p><a href="#">Black</a></p>
+										<p><a href="#">Brown</a></p>
+										<p><a href="#">View all</a></p>
+									</div>
+								</div>
+								<div class="col-md-12 mt48 pb32">
+									<div class="horizontal-link text-center">
+										<a href="/shop">Shop</a>
+										<a href="/category">Category</a>
+										<a href="/brand">Brands</a>
+										<a href="#">FAQ</a>
+										<a href="/blog">Blog</a>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+			</div>
+		</xpath>
+		<xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
+			<div t-if="not no_copyright" class="o_footer_copyright o_cc">
+				<section class="copyright-section py-4">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-md-7 mb-4 mb-md-0">
+								<p class="m-0 text-white">© 2021 | All Rights Are Reserved By <span t-field="res_company.name" /></p>
+							</div>
+							<div class="col-md-5">
+								<div class="payment-image text-md-end">
+									<img src="/theme_emart_plant/static/src/img/payment-footer.png" class="img-fluid"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</xpath>
+	</template>
+</odoo>

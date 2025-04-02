@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="blog_tags_post" inherit_id="website_blog.post_heading">
+        <xpath expr="//a[contains(@t-attf-href, '/blog/#{slug(blog_post.blog_id)}/#{slug(blog_post)}')]"
+            position="before">
+            <div class="d-flex justify-content-between">
+                <div class="blog_tag_design">
+                    <b t-if="posts_list_show_parent_blog" class="text-nowrap text-truncate text-decoration-none">
+                        <a t-attf-href="/blog/#{slug(blog_post.blog_id)}" t-field="blog_post.blog_id" />
+                    </b>
+                </div>
+                <div t-if="is_view_active('website_blog.opt_posts_loop_show_stats')" class="comments_inherit px-2">
+                    <b class="text-nowrap" title="Comments"><i class="fa fa-comment text-muted me-1" />
+                        <t t-esc="len(blog_post.message_ids)" />
+                    </b>
+                    <b class="text-nowrap ps-2" title="Views"><i class="fa fa-binoculars text-muted me-1" />
+                        <t t-esc="blog_post.visits" />
+                    </b>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="blog_title" inherit_id="website_blog.post_teaser">
+        <xpath expr="//a[contains(@t-attf-href, '/blog/#{slug(blog_post.blog_id)}/#{slug(blog_post)}')]"
+            position="after">
+
+            <div class="float-end">
+                <!-- <div class="date_tag_design ">
+                    <time t-field="blog_post.post_date" class="style_one text-nowrap fw-bold"
+                        t-options='{"format": "MMM d, yyyy"}' />
+                </div> -->
+                <div t-if="len(blog_post.tag_ids)" class="blog_post_tag_style d-flex align-items-center flex-wrap">
+                    <t t-foreach="blog_post.tag_ids" t-as="one_tag">
+                        <a t-attf-href="#{blog_url(tag=tags_list(active_tag_ids, one_tag.id))}"
+                            t-attf-class="badge mb-2 me-1 text-truncate #{one_tag.id in active_tag_ids and 'badge-primary text-bg-primary' or 'border'} post_link"
+                            t-att-rel="len(active_tag_ids) and 'nofollow'" t-esc="one_tag.name" />
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="hide_tag_data" inherit_id="website_blog.post_teaser">
+        <xpath expr="//div[hasclass('o_wblog_post_short_tag_section')]" position="replace">
+
+
+        </xpath>
+    </template>
+
+   
+
+    <template id="hide_date_data" inherit_id="website_blog.post_info">
+        <xpath expr="//div[contains(@t-attf-class, 'd-flex flex-wrap align-items-center')]" position="replace">
+            <div
+                t-attf-class="d-flex flex-wrap align-items-center justify-content-between mx-n2 #{opt_blog_list_view and 'flex-grow-0 w-auto mw-100' or 'flex-grow-1' }">
+                <time t-field="blog_post.post_date" class="text-nowrap fw-bold px-2"
+                    t-options='{"format": "MMM d, yyyy"}' />
+                
+            </div>
+        </xpath>
+    </template>
+    
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_one_testimonials" name="Testimonials">
+    <section class="emart-plant-homepage-one-testmoinials emart-plant-testmoinials">
+      <div class="container text-center">
+          <div class="text-block-one mb-2">
+            <p class="text-400 m-0">THE MOST PLANTS</p>
+            <h4 class="biz-font-family">Featured Products</h4>     
+          </div>
+          <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+            <div class="s_carousel carousel slide s_carousel_rounded" data-bs-interval="10000" id="plant485645">
+            <div class=" d-block d-lg-none">
+              <div class="carousel-indicators o_we_no_overlay">
+                <button data-bs-slide-to="0" class="active" data-bs-target="#plant485645"/>
+                <button data-bs-slide-to="1" data-bs-target="#plant485645"/>
+              </div>
+            </div>
+              <div class="carousel-inner">
+                <div class="carousel-item oe_img_bg o_bg_img_center o_colored_level active"  data-name="Slide">
+                  <div class="container oe_unremovable">
+                    <div class="row content">
+                      <div class="carousel-content col-lg-10 o_colored_level mx-auto">
+                        <section class="author-image">
+                          <img src="/theme_emart_plant/static/src/img/au2.jpg" class="img img-fluid rounded-circle mx-auto my-4"/>
+                          <h6 class="mb-3 text-800">Be inspired by our green style guide and discover how you can make every room in the house greener, and see all of our plant-based inspiration here. Share your own green inspiration with us via Instagram or Facebook with the hashtag #thejoyofplants.</h6>
+                            <div class="author-info">
+                              <p class="m-0 author-title"><small class="fw-bold">William Forster</small></p>
+                              <p class="text-500">Customer</p>
+                            </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item o_colored_level oe_img_bg o_bg_img_center" data-name="Slide">
+                  <div class="container oe_unremovable">
+                    <div class="row content">
+                      <div class="carousel-content col-lg-10 o_colored_level mx-auto">
+                        <section class="author-image">
+                          <img src="/theme_emart_plant/static/src/img/au3.jpg" class="img img-fluid rounded-circle mx-auto my-4"/>
+                          <h6 class="mb-3 text-800">Be inspired by our green style guide and discover how you can make every room in the house greener, and see all of our plant-based inspiration here. Share your own green inspiration with us via Instagram or Facebook with the hashtag #thejoyofplants.</h6>
+                            <div class="author-info">
+                                <p class="m-0 author-title fw-bold"><small class="fw-bold">William Forster</small></p>
+                                <p class="text-500">Customer</p>
+                            </div>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous" href="#plant485645">
+                <span class="carousel-control-prev-icon"/>
+                <span class="sr-only o_default_snippet_text">Previous</span>
+              </a>
+              <a class="carousel-control-next o_not_editable o_we_no_overlay" data-bs-slide="next" role="img" aria-label="Next" title="Next" href="#plant485645">
+                <span class="carousel-control-next-icon"/>
+                <span class="sr-only o_default_snippet_text">Next</span>
+              </a>
+            </div>
+        </section>
+      </div>
+    </section>
+  </template>
+</odoo>

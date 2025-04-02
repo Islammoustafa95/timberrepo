@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="theme_emart_plant.bizople_optional_product_items_inherited" t-inherit="website_sale.ReorderModal" name="Configure Optional Product Inherited" t-inherit-mode="extension">
+        <xpath expr="//tr[hasclass('o_select_options')]" position="replace">
+			<tr t-if="product.optional_product_ids" class="o_select_options">
+				<td colspan="4">
+					<h6>Extra Add Ons Available</h6>
+				</td>
+			</tr>
+		</xpath>
+        <xpath expr="//td[hasclass('td-price')]/a[hasclass('js_add')]" position="replace">
+			<a role="button" href="#" class="js_add">
+				<i class="ri ri-add-circle-line add-optionnal-item"></i> 
+			</a>
+		</xpath>
+    </t>
+</templates>

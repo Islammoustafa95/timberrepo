@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="mega_menu_one_snippet" name="Mega Menu One" groups="base.group_user">
+		<section class="mega_menu_one_snippet py-3 bg-white" style="background-image: url(/theme_emart_plant/static/src/img/mega-menu-img-two.jpg); background-position: center;">
+			<div class="container extended-container">
+				<div class="row justify-content-center">
+					<div class="col-xl-3">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Brands</a>
+							<ul>
+								<li><a class="menu_item" href="#">Aqualens</a></li>
+								<li><a class="menu_item" href="#">Soflens</a></li>
+								<li><a class="menu_item" href="#">Acuvue</a></li>
+								<li><a class="menu_item" href="#">Iconnect</a></li>
+								<li><a class="menu_item" href="#">Air Optix</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Explore</a>
+							<ul>
+								<li><a href="#" class="menu_item">Monthly</a></li>
+								<li><a href="#" class="menu_item">Daily</a></li>
+								<li><a href="#" class="menu_item">Yearly</a></li>
+								<li><a href="#" class="menu_item">Weekly</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Colors</a>
+							<ul>
+								<li><a href="#" class="menu_item">Green</a></li>
+								<li><a href="#" class="menu_item">Red</a></li>
+								<li><a href="#" class="menu_item">Blue</a></li>
+								<li><a href="#" class="menu_item">Black</a></li>
+								<li><a href="#" class="menu_item">Brown</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+</odoo>

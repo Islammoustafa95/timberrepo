@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_page_variant_inherited" inherit_id="website_sale.variants" customize_show="True" name="Show Variant Image">
+        <xpath expr="//li[@t-foreach='ptavs']" position="replace">
+            <li t-foreach="ptal.product_template_value_ids._only_active()" t-as="ptav" class="list-inline-item me-1">
+                <t t-if="ptav.color_attrib_img">
+                    <label t-attf-style="background-image:url('/web/image/product.template.attribute.value/#{ptav.id}/color_attrib_img/Color')" t-attf-class="css_attribute_color #{'active' if ptav in combination else ''} #{'custom_value' if ptav.is_custom else ''}">
+                        <input type="radio"
+                            t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
+                            t-att-checked="ptav in combination"
+                            t-att-name="'ptal-%s' % ptal.id"
+                            t-att-value="ptav.id"
+                            t-att-title="ptav.name"
+                            t-att-data-value_id="ptav.id"
+                            t-att-data-value_name="ptav.name"
+                            t-att-data-attribute_name="ptav.attribute_id.name"
+                            t-att-data-is_custom="ptav.is_custom"
+                            t-att-data-is_single="single"
+                            t-att-data-is_single_and_custom="single_and_custom"/>
+                    </label>
+                </t>
+                <t t-else="">
+                    <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
+                        t-attf-class="css_attribute_color #{'active' if ptav in combination else ''} #{'custom_value' if ptav.is_custom else ''}">
+                        <input type="radio"
+                            t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
+                            t-att-checked="ptav in combination"
+                            t-att-name="'ptal-%s' % ptal.id"
+                            t-att-value="ptav.id"
+                            t-att-title="ptav.name"
+                            t-att-data-value_id="ptav.id"
+                            t-att-data-value_name="ptav.name"
+                            t-att-data-attribute_name="ptav.attribute_id.name"
+                            t-att-data-is_custom="ptav.is_custom"
+                            t-att-data-is_single="single"
+                            t-att-data-is_single_and_custom="single_and_custom"/>
+                    </label>
+                </t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="product_template_inherited" inherit_id="website_sale.variants" name="Product Template Size Chart Inherit">
+        <xpath expr="//t[@t-foreach='product.valid_product_template_attribute_line_ids']"  position="after">
+            <div class="product-size-chart pb-2 m-0">
+                <p class="m-0">
+                    <a data-bs-target="#myModal" data-bs-toggle="modal" href="#" class="btn btn-link p-0"
+                        t-if="product.product_size_id">
+                        <i class="ri ri-ruler-line align-middle me-2"></i>Size Guide
+                    </a>
+                </p>
+                <div class="modal m-0 p-0" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <div class="header text-center">
+                                    <h6 itemprop="name">Size Chart For <span t-field="product.name"></span></h6>
+                                </div>
+                                <button type="button" class="close" data-bs-dismiss="modal"><i class="ri ri-close-line align-middle"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-5 col-md-6">
+                                            <div class="justify-content-center">
+                                                <a t-att-href="product_href" class="d-block h-100" itemprop="url"><div t-if="product.product_size_id.product_image_1920" t-field="product.product_size_id.product_image_1920"  t-options="{'widget': 'image'}" class="d-flex h-100 justify-content-center align-items-center" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-6">
+                                            <div class="justify-content-center mb16 mt16"
+                                                t-if="not is_html_empty(product.product_size_id.measurement)">
+                                                <h6><b>Size Guide</b></h6>
+                                                <div t-field="product.product_size_id.measurement" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="justify-content-center mb16 mt16" t-if="product.product_size_id.size_chart">
+                                        <div t-field="product.product_size_id.size_chart" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

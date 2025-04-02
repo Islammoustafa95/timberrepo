@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_three_image_text" name="Image-Text">
+        <section class="emart-plant-text-image pt88 pb48" style="background-color:#f8f8fa;">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <img src="/theme_emart_plant/static/src/img/page3_textimage1.jpg" class="img img-fluid mx-auto mb-5" />
+                  <div class="text-image-info">
+                    <h6>Gossypium Herbaceum</h6>
+                    <p><span class="fw-bold">Category:</span><span class="text-primary"> Amezing Plant</span></p>
+                    <p class="text-600">Plants have been used for their healing powers and topical skin care products since ancient times. In Ancient Greece during the time of Hippocrates, for example, St John's wort was used to soothe burns. </p>
+                    <h3 class="mb-3">$50.00</h3>
+                    <a href="#" class="btn btn-primary  text-white mb-5 button-icon">Order Now</a>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="text-image-info">
+                    <h6>Gossypium Herbaceum</h6>
+                    <p><span class="fw-bold">Category:</span><span class="text-primary"> Amezing Plant</span></p>
+                    <p class="text-600">Plants have been used for their healing powers and topical skin care products since ancient times. In Ancient Greece during the time of Hippocrates, for example, St John's wort was used to soothe burns. </p>
+                    <h3 class="mb-3">$50.00</h3>
+                    <a href="#" class="btn btn-primary text-white button-icon">Order Now</a>
+                  </div>
+                  <img src="/theme_emart_plant/static/src/img/page3_textimage1.jpg" class="img img-fluid mt-5" />
+                </div>
+              </div>
+            </div> 
+          </section>
+  </template>
+</odoo>

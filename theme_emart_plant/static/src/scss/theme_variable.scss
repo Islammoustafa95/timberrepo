@@ -1,0 +1,218 @@
+$primarycolor: #85B93C !default;
+$secondarycolor:#000000 !default;
+$deltacolor: #1a212e !default;
+$primarygamma: #f3ede8 !default;
+$ptextcolor: #999999 !default;
+
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1270px
+    ) !default;
+
+$o-theme-h1-font-size-multiplier: 5;
+$o-theme-h2-font-size-multiplier: 3.25;
+$o-theme-h3-font-size-multiplier: 2.875;
+$o-theme-h4-font-size-multiplier: 2.25;
+$o-theme-h5-font-size-multiplier: 1.875;
+$o-theme-h6-font-size-multiplier: 1.25;
+
+$o-website-values-palettes: ((
+
+        // Font
+        'font': 'Rubik',
+        'headings-font': 'Rubik',
+        'navbar-font': 'Rubik',
+        'buttons-font': 'Rubik',
+
+        // Buttons
+        'btn-padding-y': 0.375rem,
+        'btn-padding-x': 1.375rem,
+        'btn-padding-y-sm': 0.0625rem,
+        'btn-padding-x-sm': 0.3125rem,
+        'btn-padding-y-lg': 0.5rem,
+        'btn-padding-x-lg': 2.1875rem,
+    ),
+);
+
+
+/* -------------------------- Main Colors ------------------------*/
+$o-color-palettes: map-merge($o-color-palettes,
+    (
+        'base-1': map-merge(map-get($o-color-palettes, 'base-1'), (
+            'o-color-1': $primarycolor,
+            'o-color-2': $secondarycolor,
+            'o-color-3': $primarygamma,
+            'o-color-4': #999999,
+            'o-color-5': $deltacolor,
+            'footer':2,
+                            
+        )),
+    )
+);
+
+/* -------------------------- Text Colors ------------------------*/
+$o-base-gray-color-palette: ('white': #FFFFFF,
+    '100': #F8F9FA,
+    '200': #E9ECEF,
+    '300': #DEE2E6,
+    '400': #b4b4b4,
+    '500': #888,
+    '600': #666666,
+    '700': #1a212e,
+    '800': #888888,
+    '900': #121212,
+    'black': #000000,
+);
+
+$o-base-color-combination: (
+    'bg': 'white',
+    'text': #999999, // Default to better contrast with the 'bg'
+    'headings': #000000, // Default to 'text'
+    'h2': #000000, // Default to 'h(x-1)'
+    'h3': #000000,
+    'h4': #000000,
+    'h5': #000000,
+    'h6': #000000,
+    'link': null, // Default to BS 'primary' (= first odoo color)
+    'btn-primary': null, // Default to BS 'primary' (= first odoo color)
+    'btn-primary-border': null, // Default to 'btn-primary'
+    'btn-secondary': null, // Default to BS 'secondary' (= second odoo color)
+    'btn-secondary-border': null, // Default to 'btn-secondary'
+) !default;
+
+$o-color-combinations-presets: ((('bg': 'white',
+            'text': '900',
+            'headings': '900',
+            'link': '900',
+            'btn-primary': 'o-color-1',
+            'btn-secondary': 'o-color-2',
+        ),
+        ('bg': 'white',
+            'text': 'black',
+            'heading': 'o-color-1',
+            'link': 'o-color-1',
+            'btn-primary': 'o-color-1',
+            'btn-secondary': 'o-color-2',
+        ),
+        ('bg': 'white',
+            'text': '900',
+            'headings': '900',
+            'link': 'o-color-5',
+            'btn-primary': 'o-color-2',
+            'btn-secondary': 'o-color-3',
+        ),
+        ('bg': 'white',
+            'text': '900',
+            'headings': '900',
+            'link': '900',
+            'btn-primary': 'o-color-1',
+            'btn-secondary': 'o-color-3',
+        ),
+        ('bg':'black',
+            'text': 'white',
+            'headings': 'white',
+            'link': 'white',
+            'btn-primary': 'o-color-1',
+            'btn-secondary': 'o-color-3',
+        ),
+    ),
+);
+$o-color-combinations-preset-number: 1;
+/* -------------------------- Color Pallets ------------------------*/
+
+// You can as many pallets you want 
+$o-color-palettes: (('o-color-1': $primarycolor,
+        'o-color-2': $secondarycolor,
+        'o-color-3': $primarygamma,
+        'o-color-4': $deltacolor,
+        'o-color-5': #eeeeee,
+
+        'menu': #1a212e,
+        'footer': #1a212e,
+        'copyright': #1a212e,
+    ),
+    ('o-color-1': $primarycolor,
+        'o-color-2': $deltacolor,
+        'o-color-3': $primarygamma,
+        'o-color-4': #ffffff,
+        'o-color-5': #eeeeee,
+
+        'menu': $deltacolor,
+        'footer': $deltacolor,
+        'copyright': $deltacolor,
+    ),
+) !default;
+$o-color-palette-number: 1 !default;
+
+/* -------------------------- fonts -----------------------------*/
+
+$o-website-values-palettes: (( //'body-image': '/theme_emart_plant/static/src/img/emart-bizemart-dark-bg-image.png',
+        //'body-image-type': 'image',
+        // 'logo-height': 2.5rem,
+        // 'fixed-logo-height': 2.5rem,
+        // 'navbar-font': 'Rubik',
+        // 'buttons-font': 'Rubik',
+        'h1-font': 'Rubik',
+        'h2-font': 'Rubik',
+        'h3-font': 'Rubik',
+        'h4-font': 'Rubik',
+        'h5-font': 'Rubik',
+        'h6-font': 'Rubik',
+
+        'h1-font-size': 80px,
+        'h2-font-size': 52px,
+        'h3-font-size': 46px,
+        'h4-font-size': 36px,
+        'h5-font-size': 30px,
+        'h6-font-size': 20px,
+    ),
+);
+
+
+
+$o-theme-font-configs: (
+    'Rubik': ('family': ('Rubik',null),
+       'url': 'Rubik:400,400i,700,700i',
+    ),
+    'Montserrat': ('family': ('Montserrat', sans-serif),
+        'url': 'Montserrat:400,400i,700,700i',
+    ),
+
+    'Open Sans': ('family': ('Open Sans', sans-serif),
+       'url': 'Open+Sans:300,300i,400,400i,700,700i',
+    ),
+
+    'Roboto Slab': ('family': ('Roboto Slab',null),
+    'url': 'Roboto Slab:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i',
+    ),
+    
+    'Poppins': ('family': ('Poppins',null),
+        'url': 'Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i',
+    ),
+    'Roboto': ('family': ('Roboto', sans-serif),
+        'url': 'Roboto:300,300i,400,400i,700,700i',
+    ),
+    'Roboto Condensed': ('family': ('Roboto Condensed',null),
+        'url': 'Roboto Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i',
+    ),
+    'Oswald': ('family': ('Oswald',null),
+        'url': 'Oswald:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i',
+    ),
+    
+    'Source Sans Pro': ('family': ('Source Sans Pro', sans-serif),
+        'url': 'Source+Sans+Pro:300,300i,400,400i,700,700i',
+    ),
+    'Raleway': ('family': ('Raleway', sans-serif),
+        'url': 'Raleway:300,300i,400,400i,700,700i',
+    ),
+    'Noto Serif': ('family': ('Noto Serif', serif),
+        'url': 'Noto+Serif:300,300i,400,400i,700,700i',
+    ),
+    'Arvo': ('family': ('Arvo', Times, serif),
+        'url': 'Arvo:300,300i,400,400i,700,700i',
+    ),
+   
+);

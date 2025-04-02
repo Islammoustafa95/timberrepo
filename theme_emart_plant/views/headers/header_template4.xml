@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="theme_emart_plant_header4" inherit_id="website.layout" name="Header Four" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="biz-emart-shop-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="biz-emart-shop-header4" t-attf-class="biz-emart-shop-header4 navbar-light o_cc">
+				<div class="top-header d-none d-lg-block bg-primary">
+					<div class="container">
+						<div class="row align-items-center jus">
+							<div class="col-xl-5 d-none d-xl-block">
+								<div class="left_content">
+									<p class="m-0 text-white">Get 20% OFF on Money Plants - <a class="text-white" href="/shop"><b>Shop Now</b></a></p>
+								</div>
+							</div>
+							<div class="col-lg-12 col-xl-7">
+								<div class="right_content">
+									<ul class="nav navbar-nav flex-row justify-content-center align-items-center justify-content-md-end">
+										<li class="nav-item outlet">
+											<a href="/outlets" class="nav-link text-white">OUTLET <span class="lnr lnr-arrow-right"></span></a>
+										</li>
+										<li class="nav-item">
+											<a href="/category" class="nav-link text-white">Category</a>
+										</li>
+										<li class="nav-item">
+											<a href="/brand" class="nav-link text-white">Brand</a>
+										</li>
+										<li class="nav-item">
+											<a href="/contactus" class="nav-link text-white">Contact</a>
+										</li>
+										
+										<t t-call="website.placeholder_header_language_selector">
+											<t t-set="_div_classes" t-valuef="my-auto ms-0" class="text-white"/>dropdown-toggle
+										</t>
+								
+										<li class="nav-item">
+											<div class="curruncy-selector">
+												<t t-call="theme_emart_plant.placeholder_biz_emart_header_pricelist"/> 
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header">
+					<div class="container">
+						<nav class="d-flex justify-content-between align-items-center navbar p-0">
+							<div class="left_content">
+								<div class="website-logo-left align-items-center d-flex justify-content-start">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a>
+								</div>
+							</div>
+							<div class="right_content">
+								<div class="show_menu_btn d-none d-lg-inline-block">
+									<a href="#" class="nav-link" id="show_header4_menu">
+										<span class=" ri ri-menu-2-line align-middle me-2"></span>
+										<span class="text ">MENU</span>
+									</a>
+								</div>
+								<div class="show_menu_btn d-inline-block d-lg-none">
+									<a href="#" class="nav-link" id="show_header4_mbl_menu">
+										<span class=" ri ri-menu-2-line align-middle me-2"></span>
+										<span class="text ">MENU</span>
+									</a>
+								</div>
+								<t t-call="theme_emart_plant.bizemart_header_mobile_cart">
+									<t t-set="_class" t-value="'d-block d-lg-none'"/>
+								</t>
+								<div class="header-search align-middle d-none d-lg-inline-block">
+									<a href="#" class="nav-link">
+										<span class=" ri ri-search-2-line show-search align-middle mx-3"></span>
+									</a>
+								</div>
+								<div class="bizople-add-to-cart align-middle d-none d-lg-inline-block" id="">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+								<div class="wishlist align-middle d-none d-lg-inline-block">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+								<t t-call="theme_emart_plant.theme_emart_plant_signin_main_template">
+									<t t-set="_myaccount_class" t-value="'d-flex align-items-center ms-auto'"/>
+									<t t-set="_icon" t-value="True"/>
+									<t t-set="_text" t-value="False"/>
+								</t>
+	                		</div>
+						</nav>
+					</div>
+				</div>
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-xl-none">
+				<t t-call="theme_emart_plant.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_emart_plant.bizople_mbl_category_bar"/>
+			<t t-call="theme_emart_plant.search_popup"/>
+			<t t-call="theme_emart_plant.bizople_desktop_side_bar_header4"/>
+		</xpath>
+	</template>
+
+    <template id="menu_mbl_categories_recursive">
+        <li class="dropdown dropdown-submenu nav-item">
+			<a class="nav-link" itemprop="url" t-attf-href="/category/#{ slug(categ) }" data-bs-toggle="tooltip" t-att-title="categ.name">
+                    <span itemprop="image" t-field="categ.image_1920" t-options='{"widget": "image", "resize": None if image else "30x30"}' t-att-alt="categ.name" />
+                    <span t-out="categ.name" class="ayushi"/>
+            	<t t-if="is_view_active('theme_emart_plant.categories_list_count')">
+	            	(<span>
+	                    <t t-out="categ.with_context(product_categ_search=search).product_tmpl_count"/>
+	                </span>)
+	            </t>
+            </a>
+			
+            <i t-if="categ.child_id"
+               class="fa fa-chevron-right text-primary caret-icon-pos"/>
+            <ul t-if="categ.child_id" class="dropdown-menu">
+                <t t-foreach="categ.child_id" t-as="categ">
+                    <t t-call="theme_emart_plant.menu_mbl_categories_recursive"/>
+                </t>
+            </ul>
+        </li>
+    </template>
+
+    <template id="bizople_mbl_side_bar" inherit_id="website.layout" name="Bizople Side Bar">
+    	<xpath expr="//header" position="before">
+	    	<nav id="sidebar" class="sidebar-wrapper bg-o-color-4 d-block d-xl-none">
+		    	<div class="sidebar-content">
+					<div class="card bg-o-color-4">
+		                <div class="card-header">
+		                  	<ul class="nav nav-tabs card-header-tabs" role="tablist">
+			                    <li class="nav-item">
+			                      	<a class="nav-link o_default_snippet_text active category-tab" id="nav_tabs_link_1595584408393_3" data-bs-toggle="tab" href="#nav_tabs_content_1595584408393_3" role="tab" aria-controls="nav_tabs_content_1595584408393_3" aria-selected="false">Category</a>
+			                    </li>
+			                    <li class="nav-item">
+			                      	<a class="nav-link o_default_snippet_text menu-tab" id="nav_tabs_link_1595584408392_2" data-bs-toggle="tab" href="#nav_tabs_content_1595584408392_2" role="tab" aria-controls="nav_tabs_content_1595584408392_2" aria-selected="true">Menu</a>
+			                    </li>
+		                  	</ul>
+		                </div>
+		                <div class="card-body tab-content bg-o-color-4">
+		                  	<div class="tab-pane fade" id="nav_tabs_content_1595584408392_2" role="tabpanel" aria-labelledby="nav_tabs_link_1595584408392_2">
+		                    	<t t-call="website.navbar_nav" id="top_menu">
+									<t t-set="_nav_class" t-valuef="me-auto"/>
+									<t t-foreach="website.menu_id.child_id" t-as="submenu">                   
+										<t t-call="website.submenu">
+											<t t-set="item_class" t-value="'nav-item'" />
+											<t t-set="link_class" t-value="'nav-link'" />
+										</t>
+									</t>
+								</t>
+		                  	</div>
+		                  	<div class="tab-pane fade active show" id="nav_tabs_content_1595584408393_3" role="tabpanel" aria-labelledby="nav_tabs_link_1595584408393_3">
+			                    <ul class="biz-emart-shop-mbl-header-category" id="o_shop_collapse_category_mobile">
+					                <t t-set="categories" t-value="website.get_categories() if website else None"/>
+					                <t t-if="categories">
+					                    <t t-foreach="categories['categories']" t-as="categ">
+				                          	<t t-call="theme_emart_plant.menu_mbl_categories_recursive"/>
+					                    </t>
+					                </t>
+					            </ul>
+		                  	</div>
+		                </div>
+		          	</div>
+		    	</div>
+		    </nav>
+		</xpath>
+    </template>
+
+    <template id="bizople_desktop_side_bar_header4" name="Bizople Header 4 Side Bar">
+    	<nav id="header4_sidebar" class="sidebar-wrapper header4_sidebar bg-secondary d-none d-lg-block">
+	    	<div class="sidebar-content">
+				<div class="search">
+					<div class="close-header4-sidebar text-end">
+						<span class="lnr lnr-cross text-white" id="close_header4_sidebar"></span>
+					</div>
+				</div>
+				<div class="card">
+	                <div class="card-header d-none">
+	                  	<ul class="nav nav-tabs card-header-tabs" role="tablist">
+		                    <li class="nav-item">
+		                      	<a class="nav-link o_default_snippet_text active" id="nav_tabs_link_1595584408392_3" data-bs-toggle="tab" href="#nav_tabs_content_1595584408392_3" role="tab" aria-controls="nav_tabs_content_1595584408392_3" aria-selected="true">Menu</a>
+		                    </li>
+	                  	</ul>
+	                </div>
+	                <div class="card-body tab-content">
+	                  	<div class="tab-pane fade active show" id="nav_tabs_content_1595584408392_3" role="tabpanel" aria-labelledby="nav_tabs_link_1595584408392_3">
+	                    	<ul class="nav navbar-nav align-items-md-center" id="top_menu">
+								<t t-foreach="website.menu_id.child_id" t-as="submenu">
+									<t t-call="website.submenu">
+										<t t-set="item_class" t-value="'nav-item'" />
+										<t t-set="link_class" t-value="'nav-link text-white'" />
+									</t>
+								</t>
+							</ul>
+	                  	</div>
+	                </div>
+	          	</div>
+	    	</div>
+	    </nav>
+    </template>
+    
+    <template id="bizople_mbl_category_bar" name="Mobile Category Bar">
+	 	<t t-set="mobile_categories" t-value="website.get_product_category_data_menu() if website else None"/>
+	 	<t t-if="mobile_categories">
+	     	<div class="min-w-categ d-block d-md-none">
+	         	<div class="container">
+	             	<div class="row">
+		                 <ul class="list-group list-group-horizontal">
+			                 <t t-foreach="mobile_categories" t-as="categm">
+			                 	<a t-att-href="'/shop/category/%s' % (categm.id)">
+					  				<li class="list-group-item border-0 py-2">
+					  					<span itemprop="image" t-field="categm.category_icon" t-options='{"widget": "image"}' t-att-alt="categm.name" />
+					  					<p class="mt8 mb-0" t-out="categm.name"></p>
+					  				</li>
+					  			</a>
+			             	</t>
+			             </ul>
+	             	</div>
+	         	</div>
+	     	</div>
+     	</t>
+    </template>
+
+	<template id="mobile_search_bar" name="Mobile Search Bar">
+		<div class="header-search-bar bg-white d-block d-md-none">
+			<form method="get" data-snippet="s_products_searchbar_input" class="o_wsale_products_searchbar_form o_wait_lazy_js s_wsale_products_searchbar_input" action="/shop">
+                <div role="search" class="input-group">
+                  	<input type="search" name="search" class="search-query search-query-bizople form-control oe_search_box" data-limit="5" data-display-description="true" data-display-price="true" data-display-image="true" placeholder="Search..."/>
+	                <div class="input-group-append">
+	                    <button type="submit" class="btn btn-primary oe_search_button" aria-label="Search" title="Search">
+	                      	<i class="fa fa-search"/>
+	                    </button>
+	                </div>
+	            </div>
+                <input name="order" type="hidden" class="o_wsale_search_order_by" value=""/>
+            </form>
+		</div>
+	</template>
+
+	<template id="desktop_search_bar" name="Desktop Search Bar">
+		<form method="get" data-snippet="s_products_searchbar_input" class="o_wsale_products_searchbar_form o_wait_lazy_js s_wsale_products_searchbar_input d-flex" action="/shop">
+            <t t-set="no_cat_listing" t-value="True"/>
+            <t t-set="action" t-value="shop" />
+                    <input type="hidden" id="tvsearchCateg" name="category"/>
+                <div class="dropdown dropup d-inline-block search-categ">
+                    <button class="btn dropdown-toggle text-truncate" type="button" id="categbtn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="categ-name text-truncate align-middle">
+	                        <t>All Categories</t>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <label t-attf-class="dropdown-item select-category #{'text-primary' if not category and not is_sbcatetgory else ''}" type='button' t-att-data-id="0">All Categories</label>
+                        <t t-foreach="request.env['product.public.category'].get_all_parent_category()" t-as="cat">
+                            <label class="dropdown-item select-category" type='button' t-att-data-id="cat.id"><t t-out="cat.name"/></label>
+                        </t>
+                    </div>
+                  
+                </div>
+            <div role="search" class="input-group">
+              	<input type="search" name="search" class="search-query search-query-bizople form-control oe_search_box" data-limit="5" data-display-description="true" data-display-price="true" data-display-image="true" placeholder="Search..."/>
+            </div>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary oe_search_button" aria-label="Search" title="Search">
+                  	<i class="ri ri-search-2-line"/>
+                </button>
+            </div>
+            <input name="order" type="hidden" class="o_wsale_search_order_by" value=""/>
+        </form>
+	</template>
+
+</odoo>

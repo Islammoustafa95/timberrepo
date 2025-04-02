@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_three_two_blocks" name="Two Blocks">
+    <section class="emart-plant-homepage-two-block pt64 pb64">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 mb-3">
+                  <div class="block-hover-effect">
+                  <img src="/theme_emart_plant/static/src/img/page3_block1.jpg" class="img img-fluid mx-auto w-100" /></div>
+              </div>
+              <div class="col-lg-6 col-md-6 mb-3">
+                  <div class="block-hover-effect">
+                  <img src="/theme_emart_plant/static/src/img/page3_block2.jpg" class="img img-fluid mx-auto w-100" /></div>
+              </div>
+          </div>
+      </div>
+  </section>  
+  </template>
+</odoo>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<template id="snippet_options_inherited" inherit_id="website.snippet_options">
+
+		<!-- Headers -->
+		<xpath expr="//we-select[@data-variable='header-template']" position="inside">
+			<we-button title="Emart Header One" data-name="emart_header_one_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header1"
+				data-customize-website-variable="'biz-emart-shop-header-1'"
+				data-img="/theme_emart_plant/static/description/header1.png" />	
+			<we-button title="Emart Header Two" data-name="emart_header_two_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header2"
+				data-customize-website-variable="'biz-emart-shop-header-2'"
+				data-img="/theme_emart_plant/static/description/header2.png" />
+			<we-button title="Emart Header Three" data-name="emart_header_three_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header3"
+				data-customize-website-variable="'biz-emart-shop-header-3'"
+				data-img="/theme_emart_plant/static/description/header3.png" />				
+			<we-button title="Emart Header Four" data-name="emart_header_four_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header4"
+				data-customize-website-variable="'biz-emart-shop-header-4'"
+				data-img="/theme_emart_plant/static/description/header4.png" />
+			<we-button title="Emart Header Five" data-name="emart_header_five_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header5"
+				data-customize-website-variable="'biz-emart-shop-header-5'"
+				data-img="/theme_emart_plant/static/description/header5.png" />
+			<we-button title="Emart Header Six" data-name="emart_header_six_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header6"
+				data-customize-website-variable="'biz-emart-shop-header-6'"
+				data-img="/theme_emart_plant/static/description/header6.png" />
+			<we-button title="Emart Header Seven" data-name="emart_header_seven_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header7"
+				data-customize-website-variable="'biz-emart-shop-header-7'"
+				data-img="/theme_emart_plant/static/description/header7.png" />
+			<we-button title="Emart Header Eight" data-name="emart_header_eight_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header8"
+				data-customize-website-variable="'biz-emart-shop-header-8'"
+				data-img="/theme_emart_plant/static/description/header8.png" />
+			<we-button title="Emart Header Nine" data-name="emart_header_nine_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header9"
+				data-customize-website-variable="'biz-emart-shop-header-9'"
+				data-img="/theme_emart_plant/static/description/header9.png" />
+			<we-button title="Emart Header Ten" data-name="emart_header_ten_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header10"
+				data-customize-website-variable="'biz-emart-shop-header-10'"
+				data-img="/theme_emart_plant/static/description/header10.png" />
+			<we-button title="Emart Header Eleven" data-name="emart_header_eleven_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header11"
+				data-customize-website-variable="'biz-emart-shop-header-11'"
+				data-img="/theme_emart_plant/static/description/header11.png" />
+			<we-button title="Emart Header Twelve" data-name="emart_header_twelve_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header12"
+				data-customize-website-variable="'biz-emart-shop-header-12'"
+				data-img="/theme_emart_plant/static/description/header12.png" />
+			<we-button title="Emart Header Thirteen" data-name="emart_header_thirteen_opt"
+				data-customize-website-views="theme_emart_plant.theme_emart_plant_header13"
+				data-customize-website-variable="'biz-emart-shop-header-13'"
+				data-img="/theme_emart_plant/static/description/header13.png" />		
+		</xpath>
+
+		<xpath expr="//div[@data-js='HeaderNavbar']" position="attributes">
+			<attribute name="data-selector">#wrapwrap > header</attribute>
+		</xpath>
+
+		<xpath expr="//div[@data-js='HeaderNavbar']" position="inside">
+			<we-checkbox string="Show Pricelist" data-customize-website-views="theme_emart_plant.biz_emart_header_pricelist" data-reload="/"/>
+		</xpath>
+		
+		
+		<!-- Footers -->
+		<xpath expr="//we-select[@data-variable='footer-template']" position="inside">
+
+			<we-button title="bizemarts Footer One" data-name="bizemart_footer_one_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer1"
+				data-customize-website-variable="'biz-emart-shop-footer-1'"
+				data-img="/theme_emart_plant/static/description/footer1.png" />
+			<we-button title="bizemarts Footer Two" data-name="bizemart_footer_two_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer2"
+				data-customize-website-variable="'biz-emart-shop-footer-2'"
+				data-img="/theme_emart_plant/static/description/footer2.png" />
+			<we-button title="bizemarts Footer Three" data-name="bizemart_footer_three_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer3"
+				data-customize-website-variable="'biz-emart-shop-footer-3'"
+				data-img="/theme_emart_plant/static/description/footer3.png" />
+			<we-button title="bizemarts Footer Four" data-name="bizemart_footer_four_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer4"
+				data-customize-website-variable="'biz-emart-shop-footer-4'"
+				data-img="/theme_emart_plant/static/description/footer4.png" />
+			<we-button title="bizemarts Footer Five" data-name="bizemart_footer_five_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer5"
+				data-customize-website-variable="'biz-emart-shop-footer-5'"
+				data-img="/theme_emart_plant/static/description/footer5.png" />
+			<we-button title="bizemarts Footer Six" data-name="bizemart_footer_six_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer6"
+				data-customize-website-variable="'biz-emart-shop-footer-6'"
+				data-img="/theme_emart_plant/static/description/footer6.png" />
+			<we-button title="bizemarts Footer Seven" data-name="bizemart_footer_seven_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer7"
+				data-customize-website-variable="'biz-emart-shop-footer-7'"
+				data-img="/theme_emart_plant/static/description/footer7.png" />
+			<we-button title="bizemarts Footer Eight" data-name="bizemart_footer_eight_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer8"
+				data-customize-website-variable="'biz-emart-shop-footer-8'"
+				data-img="/theme_emart_plant/static/description/footer8.png" />
+			<we-button title="bizemarts Footer Nine" data-name="bizemart_footer_nine_opt"
+				data-customize-website-views="theme_emart_plant.theme_dark_footer"
+				data-customize-website-variable="'biz-emart-shop-footer-9'"
+				data-img="/theme_emart_plant/static/description/footer9.png" />
+			<we-button title="bizemarts Footer Ten" data-name="bizemart_footer_ten_opt"
+				data-customize-website-views="theme_emart_plant.theme_landing_footer"
+				data-customize-website-variable="'biz-emart-shop-footer-10'"
+				data-img="/theme_emart_plant/static/description/footer10.png" />
+			<we-button title="bizemarts Footer Eleven" data-name="bizemart_footer_eleven_opt"
+				data-customize-website-views="theme_emart_plant.theme_common_footer_eleven"
+				data-customize-website-variable="'biz-emart-shop-footer-11'" 
+				data-img="/theme_emart_plant/static/description/footer_one.png" />	
+		</xpath>
+
+	</template>
+
+	<!-- Mega menus -->
+	<template id="megamenu_snippets_inherited" inherit_id="website.snippet_options">
+		<xpath expr="div[@data-js='MegaMenuLayout']//we-select" position="inside">
+			<t t-set="_label">bizemarts Menu One</t>
+			<we-button t-att-data-select-label="_label" data-select-template="plant_theme_common.mega_menu_one_snippet"
+				data-img="/theme_emart_plant/static/description/icon-1.png" t-out="_label" />
+
+			<t t-set="_label">bizemarts Menu Two</t>
+			<we-button t-att-data-select-label="_label" data-select-template="plant_theme_common.mega_menu_four_snippet"
+				data-img="/theme_emart_plant/static/description/icon-1.png" t-out="_label" />
+			
+		</xpath>
+	</template>
+
+	<!-- Heading tags style options -->
+	<template id="heading_style_options" inherit_id="website.snippet_options">
+		<xpath expr="//we-input[@data-variable='font-size-base']" position="before">
+			<!-- <we-title>Bizople Custom Settings</we-title> -->
+			<we-row string="Product Background Color">
+				<we-colorpicker
+                    class="o_we_sublevel_1"
+                    data-select-style="true"
+                    data-customize-website-color="" 
+                    data-color-type="theme" 
+                    data-color="product-bgcolor"
+                    data-css-property="background-color"
+                    data-color-prefix="bg-"
+                    data-variable="product-bgcolor"
+                    />
+			</we-row>
+
+			<we-row string="H1">
+				<we-fontfamilypicker data-variable="h1-font" />
+				<we-input data-customize-website-variable="null" data-variable="h1-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+			<we-row string="H2">
+				<we-fontfamilypicker data-variable="h2-font" />
+				<we-input data-customize-website-variable="null" data-variable="h2-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+			<we-row string="H3">
+				<we-fontfamilypicker data-variable="h3-font" />
+				<we-input data-customize-website-variable="null" data-variable="h3-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+			<we-row string="H4">
+				<we-fontfamilypicker data-variable="h4-font" />
+				<we-input data-customize-website-variable="null" data-variable="h4-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+			<we-row string="H5">
+				<we-fontfamilypicker data-variable="h5-font" />
+				<we-input data-customize-website-variable="null" data-variable="h5-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+			<we-row string="H6">
+				<we-fontfamilypicker data-variable="h6-font" />
+				<we-input data-customize-website-variable="null" data-variable="h6-font-size" data-unit="px"
+					data-save-unit="rem" />
+			</we-row>
+		</xpath>
+	</template>
+
+	<!-- Snippets -->
+
+	<template id="button_style_options" inherit_id="website.snippet_options">
+		<xpath expr="//we-select[@data-button='secondary']" position="after">
+			<div
+				data-selector=".biz_dynamic_product_slider, .oe_multi_category_slider, .bizcommon_category_slider_3, .blog_slider_owl, .brand_slider">
+				<we-select string="Sliders Width" data-variable="slider-width">
+					<we-button data-select-class="default_style">Default Size</we-button>
+					<we-button data-select-class="extended-container">Extended size</we-button>
+				</we-select>
+			</div>
+			<div data-js="config_slider_clone_fix" data-selector="#wrapwrap" data-no-check="true"/>
+		</xpath>
+	</template>
+</odoo>

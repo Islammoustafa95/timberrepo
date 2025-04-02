@@ -1,0 +1,27 @@
+// Newsletter Snippts
+.emart-plant-newsletter{
+    .s_newsletter_subscribe_form {
+        .btn {
+            line-height: 35px !important;
+            border-radius: 0 !important;
+        }
+        .form-control {
+          &:focus {
+            box-shadow: none !important;
+          }
+          &:disabled{
+            background-color: transparent !important;
+          }
+        }
+        .js_subscribe_value {
+            border-bottom: 2px solid #ebebeb;
+            border-radius: 0;
+            height: 50px;
+            border-top: 0 !important;
+            border-left: 0 !important;
+            border-right: 0 !important;
+        }
+    }
+}
+
+

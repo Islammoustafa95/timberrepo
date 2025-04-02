@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_two_grid" name="Grid">
+    <section class="emart-plant-grid-features pt96 pb96">
+      <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="plant-block-one bg-white shadow">
+                    <div class="block-content d-flex">
+                        <img src="/theme_emart_plant/static/src/img/page1_icon1.png" class="img img-fluid me-3" />
+                        <div class="content">
+                            <p class="mb-1 grid-title fw-bold">EASY SHIPPING</p>
+                           <p class="m-0 grid-subtitle text-500"><small>ALL ORDER ABOUT $50</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  mb-3">
+                <div class="plant-block-one bg-white shadow">
+                    <div class="block-content d-flex">
+                        <img src="/theme_emart_plant/static/src/img/page1_icon2.png" class="img img-fluid me-3" />
+                        <div class="content">
+                            <p class="mb-1 grid-title fw-bold">24/7 SUPPORT</p>
+                           <p class="m-0 grid-subtitle text-500"><small>0123 456 789</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  mb-3">
+                <div class="plant-block-one bg-white shadow">
+                    <div class="block-content d-flex">
+                        <img src="/theme_emart_plant/static/src/img/page1_icon3.png" class="img img-fluid me-3" />
+                        <div class="content">
+                            <p class="mb-1 grid-title fw-bold">100% MONEY RETURN</p>
+                           <p class="m-0 grid-subtitle text-500"><small>10 DAYS TO RETURN</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>  
+  </template>
+</odoo>

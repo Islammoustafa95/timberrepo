@@ -1,0 +1,11 @@
+//Image-Text Snippts
+.emart-plant-text-image{
+    .button-icon{
+        padding: 8px 30px !important;
+        &::after{
+            content: "\f105";
+            font-family: "FontAwesome" !important;
+            margin-left: 5px;
+            vertical-align:bottom;
+    }}
+}

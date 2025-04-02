@@ -1,0 +1,15 @@
+// Page-One widget-snippts 
+.emart-plant-homepage-one-widget{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+   .button-icon{
+     padding: 12px 30px 12px 30px;
+     &::after{
+         content: "\f105";
+         font-family: "FontAwesome" !important;
+         margin-left: 5px;
+         vertical-align:bottom;
+ }} 
+}

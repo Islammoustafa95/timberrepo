@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	
+	<menuitem id="theme_emart_plant_customization_menu" 
+		name="Bizople Theme Configuration" 
+		groups="base.group_system" 
+		action="sale.product_template_action" 
+		parent="website.menu_website_configuration" 
+		sequence="100"/>
+		
+	<menuitem action="theme_emart_plant.bizcommon_dynamic_blog_slider_action" 
+		id="bizcommon_dynamic_blog_slider_menu"
+		name="Blog Slider"
+		parent="theme_emart_plant_customization_menu"
+		sequence="40" />
+		
+	<menuitem id="menu_product_brand" 
+		name="Product Brands"
+		action="theme_emart_plant.act_open_product_brand_view"
+		parent="theme_emart_plant_customization_menu" 
+		sequence="50" />
+
+	<menuitem id="menu_pwa_shortcuts" 
+	    name="PWA Shortcuts" 
+	    action="theme_emart_plant.act_open_pwa_shortcuts_view" 
+	    parent="theme_emart_plant_customization_menu" 
+		sequence="50" />	
+		
+    <menuitem id="menu_product_label_bizople"
+    	name="Product Label"
+    	action="theme_emart_plant.act_open_product_label_view_bizople"
+    	parent="theme_emart_plant_customization_menu"
+    	sequence="70" />
+            
+    <!-- <menuitem id="menu_nutritional_facts_settings" 
+    	name="Nutritional Facts"
+    	action="theme_emart_plant.act_open_nutritional_facts_view" 
+    	parent="website_sale.menu_catalog" 
+    	sequence="8"/> -->
+		
+	<menuitem id="menu_product_highlights_settings" 
+		name="Product Highlights"
+		action="theme_emart_plant.act_open_product_highlights_view" 
+		parent="theme_emart_plant_customization_menu" 
+		sequence="71"/>
+
+	<menuitem id="Store_location" 
+		name="Store Locations" 
+		parent="theme_emart_plant_customization_menu" 
+		action="store_location_act" 
+		sequence="72"/>
+
+	<menuitem id="menu_product_size_chart_view" 
+		parent="theme_emart_plant_customization_menu"
+		name="Product Size Chart" 
+		action="product_size_chart_action" 
+		sequence="73"/>		
+
+
+	<menuitem id="menu_product_tab" 
+		name="Product Tabs" 
+		action="theme_emart_plant.act_open_product_tab_view_bizople" 
+		parent="theme_emart_plant_customization_menu" 
+		sequence="60" />
+</odoo>

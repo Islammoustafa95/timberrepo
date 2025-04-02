@@ -1,0 +1,85 @@
+.footer_one {
+  .top-footer {
+    .block-subscribe-footer {
+      input.js_subscribe_value.form-control.bg-white {
+        border: 0;
+        border-bottom: 2px solid #121212;
+        border-radius: 0;
+        padding: 15px 0;
+        height: unset;
+        font-size: 14px;
+      }
+      .input-group-append {
+        .btn {
+          padding: 15px 0;
+          background-color: transparent;
+          border-color: transparent;
+          color: #121212;
+          transition: 0.2s;
+          -webkit-transition: 0.2s;
+          &:hover {
+            color: $primary;
+          }
+        }
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+      }
+    }
+  }
+  .o_footer_copyright {
+    .footer-middle,
+    .footer-links {
+      .link{
+        color: inherit !important;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+        &:hover {
+          color: $primary !important;
+          text-decoration: none;
+        }
+      }
+    }
+    background-color: #fff;
+    color: #121212;
+  }
+}
+
+.bizemart_footer > .o_footer_copyright {
+  display: none;
+}
+
+.o_footer_copyright{
+  div.s_social_media{
+    .o_editable_media{
+      color: #5b7f29 !important;
+      &:hover{
+        text-decoration: none !important;
+      }
+    }
+  }
+}
+// .o_footer{
+// 	z-index: 0 !important;
+// }
+
+.f2-middle {
+  h4 {
+    color: $ptextcolor;
+  }
+}
+.footer-newsletter {
+  h4 {
+    color: $ptextcolor;
+  }
+  p {
+    color: $ptextcolor;
+  }
+}
+.middle-footer {
+  .label {
+    color: $ptextcolor;
+  }
+}

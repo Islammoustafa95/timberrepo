@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <template id="s_biz_emart_title" name="Title">
+    <section class="s_emart_title pt40 pb40 o_colored_level">
+        <div class="container">
+          <h1 class="biz-font-family" style="text-align: center;">Your Website Title</h1>
+        </div>
+      </section>
+  </template>
+</odoo>

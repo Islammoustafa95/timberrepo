@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_one_widget" name="Widget">
+    <section class="emart-plant-homepage-one-widget mx-4 pt120 pb120" style="background-image: url(/theme_emart_plant/static/src/img/page1_cover.jpg);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+          <div class="widget-content text-center">
+           <h4 class="mb-4 biz-font-family">Hurry Up Big Sale</h4>
+           <section class="s_countdown pb0 pt0 mb-4 o_colored_level" data-display="dhms" data-end-action="nothing" data-size="120" data-layout="circle" data-layout-background="plain" data-progress-bar-style="none" data-progress-bar-weight="thin" data-text-color="black" data-layout-background-color="#FFFFFF" data-progress-bar-color="o-color-1" data-snippet="s_countdown" data-end-time="1664415653.042707" data-name="Countdown" style="background-image: none;">
+            <div class="container">
+              <div class="s_countdown_canvas_wrapper text-center d-flex justify-content-center"/>
+            </div>
+          </section>
+           <h6 class="pt16 pb8">Gossypium Herbaceum</h6>
+           <h6 class="mb-3">$50.00</h6>
+           <a href="#" class="btn btn-secondary  text-white  button-icon">Order Now</a>
+          </div>
+         </div>
+        </div>
+      </div>
+    </section>
+  </template>
+</odoo>

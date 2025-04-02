@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_three_banner" name="Banner">
+    <section class="emart-plant-homepage-three-banner s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+      <div class="s_carousel carousel slide s_carousel_rounded" data-bs-interval="10000" id="plantthree14526">
+      <div class=" d-block d-lg-none">
+        <div class="carousel-indicators o_we_no_overlay">
+          <button data-bs-slide-to="0" class="active" data-bs-target="#plantthree14526"/>
+          <button data-bs-slide-to="1" data-bs-target="#plantthree14526"/>
+        </div>
+      </div>
+        <div class="carousel-inner">
+          <div class=" carousel-item  oe_img_bg o_bg_img_center o_colored_level active" style="background-image: url(/theme_emart_plant/static/src/img/page3_banner1.jpg);" data-name="Slide">
+            <div class="container oe_unremovable">
+              <div class="row content">
+                <div class="carousel-content col-lg-8 offset-lg-2 o_colored_level text-center text-white">
+                  <!-- <h1 class="mb-4 text-white">Plant Make Life Better</h1> -->
+                  <h1 class="mb-4 text-white heading-text biz-font-family">Find Perfect Plants For Your Home</h1>
+                  <p class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </p>
+                  <a href="#" class="btn btn-secondary flat text-capitalize btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" carousel-item  o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(/theme_emart_plant/static/src/img/page3_banner2.jpg);" data-name="Slide">
+            <div class="container oe_unremovable">
+              <div class="row content">
+                <div class="carousel-content col-lg-8 offset-lg-2 o_colored_level text-center text-white">
+                  <h1 class="mb-4 text-white heading-text biz-font-family">Plant Make Life Better</h1>
+                  <p class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </p>
+                  <a href="#" class="btn btn-secondary flat text-capitalize btn-lg">Order Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous" href="#plantthree14526">
+          <span class="carousel-control-prev-icon"/>
+          <span class="sr-only o_default_snippet_text">Previous</span>
+        </a>
+        <a class="carousel-control-next o_not_editable o_we_no_overlay" data-bs-slide="next" role="img" aria-label="Next" title="Next" href="#plantthree14526">
+          <span class="carousel-control-next-icon"/>
+          <span class="sr-only o_default_snippet_text">Next</span>
+        </a>
+      </div>
+  </section>
+  </template>
+</odoo>

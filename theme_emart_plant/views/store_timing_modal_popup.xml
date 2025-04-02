@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="store_popup" name="Store Popup">
+        <div class="s_popup o_snippet_invisible" data-vcss="001">
+            <div class="modal fade s_popup_middle" style="background-color: var(--black-50) !important;" data-show-after="5000" data-display="afterDelay" data-consents-duration="7" data-focus="false" data-backdrop="false" tabindex="-1" role="dialog">
+                <div class="modal-dialog d-flex">
+                    <div class="modal-content oe_structure">
+                        <div class="s_popup_close js_close_popup o_we_no_overlay o_not_editable" aria-label="Close">×</div>
+                        <section class="s_banner oe_img_bg pt96 pb96" data-snippet="s_banner" t-attf-style="background-image: url('#{website.image_url(website, 'store_close_bg_img')}');background-position: center;background-size: cover;background-repeat: no-repeat;">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-10 offset-lg-1 text-center o_cc o_cc1 jumbotron pt24 pb24">
+                                        <p><div t-field="website.store_close_message"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

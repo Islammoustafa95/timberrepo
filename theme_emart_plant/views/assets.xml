@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="theme_emart_plant_assets"
+		name="Theme Common Assets" inherit_id="web.layout">
+		<xpath expr="." position="inside">
+
+			<link rel="preload" href="/theme_emart_plant/static/lib/RemixIcon/remixicon.woff2?t=1580819880586" as="font" crossorigin="" />
+			<link rel="preload" href="/theme_emart_plant/static/lib/linearicons/fonts/Linearicons-Free.woff2?w118d" as="font" crossorigin="" />
+			<link rel="preload" href="/theme_emart_plant/static/lib/themify-icons/fonts/themify.woff?-fvbane" as="font" crossorigin="" />
+			<link rel="preload" href="/theme_emart_plant/static/lib/icofont/fonts/icofont.woff2" as="font" crossorigin="" />
+		</xpath>			
+	</template>
+</odoo>

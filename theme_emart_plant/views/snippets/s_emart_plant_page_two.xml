@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_two" name="Emart Plant HomePage two">
+  <section>
+        <section class="emart-plant-homepage-two-banner s_carousel_wrapper px-4" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+            <div class="s_carousel carousel slide s_carousel_rounded" data-bs-interval="10000" id="plant1245">
+            <div class=" d-block d-lg-none">
+              <div class="carousel-indicators o_we_no_overlay">
+                <button data-bs-slide-to="0" class="active" data-bs-target="#plant1245"/>
+                <button data-bs-slide-to="1" data-bs-target="#plant1245"/>
+              </div>
+            </div>
+              <div class="carousel-inner">
+                <div class=" carousel-item  oe_img_bg o_bg_img_center o_colored_level active" style="background-image: url(/theme_emart_plant/static/src/img/page2_banner1.jpg);" data-name="Slide">
+                  <div class="container oe_unremovable">
+                    <div class="row content">
+                      <div class="carousel-content col-lg-6 o_colored_level">
+                        <h1 class="mb-4 biz-font-family">Plant Make Life Better</h1>
+                        <p class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </p>
+                        <a href="#" class="btn btn-secondary flat text-capitalize btn-lg">Order Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" carousel-item  o_colored_level oe_img_bg o_bg_img_center" style="background-image: url(/theme_emart_plant/static/src/img/page2_banner2.jpg);" data-name="Slide">
+                  <div class="container oe_unremovable">
+                    <div class="row content">
+                      <div class="carousel-content col-lg-6 offset-lg-6 o_colored_level">
+                        <h1 class="mb-4 biz-font-family">Best House Plants</h1>
+                        <p class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </p>
+                        <a href="#" class="btn btn-secondary flat text-capitalize btn-lg">Order Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous" href="#plant1245">
+                <span class="carousel-control-prev-icon"/>
+                <span class="sr-only o_default_snippet_text">Previous</span>
+              </a>
+              <a class="carousel-control-next o_not_editable o_we_no_overlay" data-bs-slide="next" role="img" aria-label="Next" title="Next" href="#plant1245">
+                <span class="carousel-control-next-icon"/>
+                <span class="sr-only o_default_snippet_text">Next</span>
+              </a>
+            </div>
+        </section>
+
+        <section class="emart-plant-grid-features pt96 pb96">
+          <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="plant-block-one bg-white shadow">
+                        <div class="block-content d-flex">
+                            <img src="/theme_emart_plant/static/src/img/page1_icon1.png" class="img img-fluid me-3" />
+                            <div class="content">
+                                <p class="mb-1 grid-title fw-bold">EASY SHIPPING</p>
+                               <p class="m-0 grid-subtitle text-500"><small>ALL ORDER ABOUT $50</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6  mb-3">
+                    <div class="plant-block-one bg-white shadow">
+                        <div class="block-content d-flex">
+                            <img src="/theme_emart_plant/static/src/img/page1_icon2.png" class="img img-fluid me-3" />
+                            <div class="content">
+                                <p class="mb-1 grid-title fw-bold">24/7 SUPPORT</p>
+                               <p class="m-0 grid-subtitle text-500"><small>0123 456 789</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6  mb-3">
+                    <div class="plant-block-one bg-white shadow">
+                        <div class="block-content d-flex">
+                            <img src="/theme_emart_plant/static/src/img/page1_icon3.png" class="img img-fluid me-3" />
+                            <div class="content">
+                                <p class="mb-1 grid-title fw-bold">100% MONEY RETURN</p>
+                               <p class="m-0 grid-subtitle text-500"><small>10 DAYS TO RETURN</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </section>
+
+        <section class="emart-plant-block-content pt64 pb64">
+            <div class="container-fluid px-4">
+              <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="block-hover-effect">
+                  <img src="/theme_emart_plant/static/src/img/plant1.jpg" class="img img-fluid mx-auto"/>
+                 </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-3">
+                  <div class="block-hover-effect">
+                  <img src="/theme_emart_plant/static/src/img/plant2.jpg" class="img img-fluid mx-auto"/>
+               </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-3">
+                  <div class="block-hover-effect">
+                    <img src="/theme_emart_plant/static/src/img/plant3.jpg" class="img img-fluid mx-auto"/>
+                </div>
+                </div>
+              </div>
+            </div> 
+        </section>
+
+        <section class="emart-plant-testmoinials pt64 pb64" style="background-color: #f8f8fa;">
+            <div class="container text-center">
+                <div class="text-block-one mb-2">
+                  <p class="text-400 m-0">THE MOST PLANTS</p>
+                  <h4 class="biz-font-family">Featured Products</h4>     
+                </div>
+                <section class="s_carousel_wrapper" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+                  <div class="s_carousel carousel slide s_carousel_rounded" data-bs-interval="10000" id="edvvv2445">
+                  <div class=" d-block d-lg-none">
+                    <div class="carousel-indicators o_we_no_overlay">
+                      <button data-bs-slide-to="0" class="active" data-bs-target="#edvvv2445"/>
+                      <button data-bs-slide-to="1" data-bs-target="#edvvv2445"/>
+                    </div>
+                  </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item oe_img_bg o_bg_img_center o_colored_level active"  data-name="Slide">
+                        <div class="container oe_unremovable">
+                          <div class="row content">
+                            <div class="carousel-content col-lg-10 o_colored_level mx-auto">
+                              <section class="author-image">
+                                <img src="/theme_emart_plant/static/src/img/au2.jpg" class="img img-fluid rounded-circle mx-auto my-4"/>
+                                <h6 class="mb-3 text-800">Be inspired by our green style guide and discover how you can make every room in the house greener, and see all of our plant-based inspiration here. Share your own green inspiration with us via Instagram or Facebook with the hashtag #thejoyofplants.</h6>
+                                  <div class="author-info">
+                                    <p class="m-0 author-title"><small class="fw-bold">William Forster</small></p>
+                                    <p class="text-500">Customer</p>
+                                  </div>
+                              </section>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item o_colored_level oe_img_bg o_bg_img_center" data-name="Slide">
+                        <div class="container oe_unremovable">
+                          <div class="row content">
+                            <div class="carousel-content col-lg-10 o_colored_level mx-auto">
+                              <section class="author-image">
+                                <img src="/theme_emart_plant/static/src/img/au3.jpg" class="img img-fluid rounded-circle mx-auto my-4"/>
+                                <h6 class="mb-3 text-800">Be inspired by our green style guide and discover how you can make every room in the house greener, and see all of our plant-based inspiration here. Share your own green inspiration with us via Instagram or Facebook with the hashtag #thejoyofplants.</h6>
+                                  <div class="author-info">
+                                      <p class="m-0 author-title fw-bold"><small class="fw-bold">William Forster</small></p>
+                                      <p class="text-500">Customer</p>
+                                  </div>
+                              </section>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev o_not_editable o_we_no_overlay" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous" href="#edvvv2445">
+                      <span class="carousel-control-prev-icon"/>
+                      <span class="sr-only o_default_snippet_text">Previous</span>
+                    </a>
+                    <a class="carousel-control-next o_not_editable o_we_no_overlay" data-bs-slide="next" role="img" aria-label="Next" title="Next" href="#edvvv2445">
+                      <span class="carousel-control-next-icon"/>
+                      <span class="sr-only o_default_snippet_text">Next</span>
+                    </a>
+                  </div>
+              </section>
+            </div>
+        </section>
+       
+        <section class="emart-plant-homepage-two-multibanner pt64 pb64">
+            <div class="container">
+                <div class="text-block-four mb-5 text-center">
+                    <p class="text-400 mb-2">MORE INSPIRATION</p>
+                    <h4 class="biz-font-family">Big Collection Of Plants</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="container">
+                            <div class="row">
+                                <div class="banner-content col-lg-12 col-md-12  mb32">
+                                    <div class="block-hover-effect">
+                                        <img src="/theme_emart_plant/static/src/img/page2_block1.jpg" class="img img-fluid w-100" />
+                                    </div>
+                                    <div class="banner-title">
+                                       <a href="#" class="btn btn-custom flat text-capitalize btn-lg" style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                                    </div>
+                                </div>
+                                <div class="banner-content col-lg-6 col-md-6 mb-3">
+                                    <div class="block-hover-effect">
+                                        <img src="/theme_emart_plant/static/src/img/page2_block3.jpg" class="img img-fluid w-100 " />
+                                    </div>
+                                    <div class="banner-title">
+                                       <a href="#" class="btn btn-custom flat text-capitalize btn-lg" style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                                    </div>
+                                </div>
+                                <div class="banner-content col-lg-6 col-md-6 mb-3">
+                                    <div class="block-hover-effect">
+                                        <img src="/theme_emart_plant/static/src/img/page2_block4.jpg" class="img img-fluid w-100 " />
+                                    </div>
+                                    <div class="banner-title">
+                                       <a href="#" class="btn btn-custom flat text-capitalize btn-lg" style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="container">
+                            <div class="row">
+                        <div class="banner-content col-lg-12 col-md-12  mb32">
+                            <div class="block-hover-effect">
+                                <img src="/theme_emart_plant/static/src/img/page2_block2.jpg" class="img img-fluid w-100" />
+                            </div>
+                            <div class="banner-title">
+                               <a href="#" class="btn btn-custom flat text-capitalize btn-lg" style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                            </div>
+                        </div>
+                        <div class="banner-content col-lg-12 col-md-12  mb-3">
+                            <div class="block-hover-effect">
+                                <img src="/theme_emart_plant/static/src/img/page2_block5.jpg" class="img img-fluid w-100" />
+                            </div>
+                            <div class="banner-title">
+                               <a href="#" class="btn btn-custom flat text-capitalize btn-lg" style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                            </div>
+                        </div>
+                        </div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="emart-plant-newsletter  pt96 pb96">
+          <div class="container text-center">
+              <div class="text-block-one mb-5">
+                  <h4 class="mb-4 biz-font-family">Join Our News Letter</h4>
+                  <h6 class="text-600">Keep pushing forward. We've got your back.</h6>
+              </div>
+              <form class="s_newsletter_subscribe_form s_newsletter_list js_subscribe w-lg-75 mx-auto" data-vxml="001" data-list-id="2">
+                  <div class="js_subscribed_wrap d-none">
+                      <p class="h4-fs text-center text-success js_subscribed_btn"><i class="fa fa-check-circle-o" role="img"/>Thanks for registering!</p>
+                  </div>
+                  <div class="js_subscribe_wrap">
+                      <div class="input-group">
+                          <input type="email" name="email" class="js_subscribe_value form-control" placeholder="Enter Your Email"/>
+                          <span class="input-group-append">
+                              <button role="button" class="btn btn-primary js_subscribe_btn h-100 o_submit px-5 text-white ms-2">Subscribe</button>
+                          </span>
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </section>
+      </section>
+    </template>
+</odoo>

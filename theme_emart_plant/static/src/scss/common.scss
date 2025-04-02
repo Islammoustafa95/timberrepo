@@ -1,0 +1,25 @@
+.s_features{
+	.lnr,.icon,.icofont,.lni,.ri,.ti{
+		width: 6rem;
+	    height: 6rem;
+	    line-height: 6rem
+	}
+}
+.bizople-search-results{
+	.o_search_result_item{
+		.media-body{
+			.h6{
+				font-size:17px;
+			}
+			p{
+				font-size:15px;
+			}
+		}
+		.flex-shrink-0{
+			.css_editable_mode_hidden{
+				font-size:17px;
+				font-weight: 690 !important;
+			}
+		}
+	}
+}

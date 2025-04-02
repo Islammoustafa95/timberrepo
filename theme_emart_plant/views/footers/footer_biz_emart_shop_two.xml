@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="theme_landing_footer" inherit_id="website.layout" name="Footer biz-emart-default Two" active="False">
+         
+        <xpath expr="//div[@id='footer']" position="replace">  
+            <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                <section class="pt-5 pb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <div class="footer-logo">
+                                    <img class="img img-fluid" src="/theme_emart_plant/static/description/emart-logo_demo.png"/>
+                                </div>
+                                <div class="pt-4 mt-2 pb-3">
+                                    <a class="btn btn-outline-primary footer_text_color" t-attf-href="tel:{{ res_company.phone}}"> <i class="fa fa-phone me-2"/><span t-out="res_company.phone"/></a>
+                                </div>
+                                <p class="footer_text_color"><span t-out="res_company.street"/>,<br/><span t-out="res_company.city"/>,<span t-out="res_company.zip"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>              
+            </div>
+        </xpath>
+        
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="attributes">
+            <attribute name="t-attf-class" add="bg-transparent o_footer_copyright o_colored_level o_cc o_dirty" separator=" "/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm')]" position="attributes">
+            <attribute name="t-attf-class" add="col-12 d-md-flex align-items-md-center justify-content-md-center text-center" separator=" "/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm')]" position="before">
+            <div class="col-12  text-center my-2">
+                <div class="footer-right text-center">
+                    <div class="s_social_media o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                        <a href="/website/social/facebook" class="link mx-2 s_social_media_facebook" target="_blank" aria-label="Facebook">
+                            <i class="fa fa-facebook o_editable_media"/>
+                        </a>
+                        <a href="/website/social/twitter" class="link mx-2 s_social_media_twitter" target="_blank" aria-label="X">
+                            <i class="fa fa-twitter o_editable_media"/>
+                        </a>
+                        <a href="/website/social/linkedin" class="link mx-2 s_social_media_linkedin" target="_blank" aria-label="LinkedIn">
+                            <i class="fa fa-linkedin o_editable_media"/>
+                        </a>
+                        <a href="/website/social/youtube" class="link mx-2 s_social_media_youtube" target="_blank" aria-label="Youtube">
+                            <i class="fa fa-youtube-play o_editable_media"/>
+                        </a>
+                        <a href="/website/social/instagram" class="link mx-2 s_social_media_instagram" target="_blank" aria-label="Instagram">
+                            <i class="fa fa-instagram o_editable_media"/>
+                        </a>
+                        <a href="/website/social/github" class="link mx-2 s_social_media_github" target="_blank" aria-label="Github">
+                            <i class="fa fa-github o_editable_media"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+
+        <xpath expr="//span[hasclass('o_footer_copyright_name')]" position="replace">
+            <span class="footer_text_color">© 2021 | All Right Are Reserved By</span>
+            <span t-field="res_company.name" class="footer_text_color mx-2"/>
+        </xpath>
+    </template>
+</odoo>

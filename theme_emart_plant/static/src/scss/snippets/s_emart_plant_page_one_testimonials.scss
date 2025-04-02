@@ -1,0 +1,89 @@
+// Testmoinials One Snippts
+.emart-plant-testmoinials {
+    .s_carousel_rounded { 
+        .carousel-control-prev-icon:before {
+            content: "\f104" !important;
+        }
+        .carousel-control-next-icon:before {
+            content: "\f105" !important;
+        }
+        .carousel-control-prev-icon,.carousel-control-next-icon {
+            &::before {
+                width: 2.125rem !important;
+                height: 2.125rem !important;
+                line-height: 2.125rem !important;
+                border: 1px solid #ebebeb;
+                transition: 0.3s;
+                display: inline-block;
+                border-radius: 50%;
+                font-family: "FontAwesome";
+                color: black !important;
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
+            }
+            &:hover::before {
+                background: $primary !important;
+                font-family: "FontAwesome";
+                color: #fff !important;
+                border-color: $primary !important; 
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+        &:hover {
+            .carousel-control-prev,
+            .carousel-control-next {
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+        .carousel-content{
+            .author-image .img {
+                width: 90px;
+            }
+            .author-info {
+                padding-left: 3.125rem;
+                position: relative;
+                display: inline-block;
+                text-align: left;
+                &:before {
+                    content: "\ec1f";
+                    font-family: 'remixicon' !important;
+                    color: $primary;
+                    font-size: 3.5rem;
+                    line-height: 1;
+                    display: inline-block;
+                    position: absolute;
+                    left: -5px;
+                    top: -3px;
+                }
+                .author-title {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    letter-spacing: 2.7px;
+                }
+            }
+        }
+    }
+}
+
+// page three tesmoinials
+
+.emart-plant-testmoinials{
+    .testmoinials-three{
+        .carousel-control-prev-icon{
+            position: absolute;
+            left: -15px;
+        }
+        .carousel-control-next-icon{
+            position: absolute;
+            right: -15px;
+        }
+    }
+}

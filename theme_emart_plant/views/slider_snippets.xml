@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_slider_snippet_load" inherit_id="website.snippets">
+        <xpath expr="//snippets[@id='snippet_structure']" position="before">
+            <div id="slider_snippet_menu" class="o_panel">
+                
+                <snippets class="o_panel_body" string="Dynamic Snippets">
+
+                    <t t-snippet="theme_emart_plant.s_dynamic_config"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png" />
+                    <t t-snippet="theme_emart_plant.s_product_banner"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png" />
+                    <t t-snippet="theme_emart_plant.s_image_hotspot"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png" />
+                  
+                </snippets>
+
+                <snippets class="o_panel_body" string="Configurator Snippet Styles">
+                    <t t-snippet="theme_emart_plant.s_configurator_snippet_style2"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-1.png" />
+                    <t t-snippet="theme_emart_plant.s_configurator_snippet_style3"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-2.png" />
+                    <t t-snippet="theme_emart_plant.s_configurator_snippet_style4"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-3.png" />
+                    <t t-snippet="theme_emart_plant.blocks1_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-4.png" />
+                    <t t-snippet="theme_emart_plant.blocks2_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-5.png" />
+                    <t t-snippet="theme_emart_plant.blocks3_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-6.png" />
+                    <t t-snippet="theme_emart_plant.blocks4_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-7.png" />
+                    <t t-snippet="theme_emart_plant.blocks5_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-8.png" />
+                    <t t-snippet="theme_emart_plant.blocks6_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-9.png" />
+                    <t t-snippet="theme_emart_plant.blocks7_snippet"
+                        t-thumbnail="/theme_emart_plant/static/src/img/config-snippet-10.png" />
+                </snippets>
+
+                <snippets class="o_panel_body" string="Emart-Plant-Homepages">
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_two"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three"
+                        t-thumbnail="/theme_emart_plant/static/description/icon-2.png"/> 
+                </snippets>
+
+                <snippets id="snippet_structure" string="Structure">
+
+                    <!-- Emart-Plant-Homepage-One -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one_banner"
+                        string="Emart Plant Page One Banner" group="intro"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one_history"
+                        string="Emart Plant Page One History" group="text"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one_categories"
+                        string="Emart Plant Page One Categories" group="images"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one_widget"
+                        string="Emart Plant Page One Widget" group="images"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_one_testimonials"
+                        string="Emart Plant Page One Testimonials" group="people"/>    
+
+                    <!-- Emart-Plant-Homepage-Two -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_two_banner"
+                        string="Emart Plant Page Two Banner" group="intro"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_two_testimonials"
+                        string="Emart Plant Page Two Testimonials" group="people"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_two_categories"
+                        string="Emart Plant Page Two Categories" group="images"/>
+
+                    <!-- Emart-Plant-Homepage-Two -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_banner"
+                        string="Emart Plant Page Three Banner" group="intro"/> 
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_history"
+                        string="Emart Plant Page Three History" group="text"/> 
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_image_text"
+                        string="Emart Plant Page Three Image Text" group="content"/> 
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_two_blocks"
+                        string="Emart Plant Page Three Blocks" group="images"/>
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_testimonials"
+                        string="Emart Plant Page Three Testimonials" group="people"/> 
+
+                    <!-- newsletter -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_newsletter"
+                        string="Emart Plant Newsletter" group="contact_and_forms"/>      
+                    
+                    <!-- tree blocks -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_three_three_blocks"
+                        string="Emart Plant Three Blocks" group="columns"/>
+
+                    <!-- Emart Plant Page Two Grid -->
+                    <t t-snippet="theme_emart_plant.s_emart_plant_page_two_grid"
+                        string="Emart Plant Two Grid" group="columns"/>
+
+                    <!-- Emart-Plant-Title -->
+                    <t t-snippet="theme_emart_plant.s_biz_emart_title"
+                        string="Emart Title" group="text"/>   
+                </snippets>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- blog Slider  -->
+
+    <template id="s_bizople_theme_blog_slider_snippet" name="Blog Slider">
+        <section id="biz_blog_slider_snippet" class="blog blog_slider_owl oe_img_bg oe_website_sale"
+            data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
+            <div class="container">
+                <div class="block-title">
+                    <h3 class="filter">Blog post</h3>
+                </div>
+            </div>
+        </section>
+    </template>
+
+   
+    <template id="s_bizople_theme_blog_slider_snippet_option" inherit_id="website.snippet_options"
+        name="Filter Options">
+        <xpath expr="//div" position="after">
+            <div data-js="s_bizople_theme_blog_slider_snippet" data-selector=".blog_slider_owl"
+                data-snippet-option-id="s_bizople_theme_blog_slider_snippet">
+                <li data-theme_decor_blog_slider="" class="list-unstyled">
+                    <we-row string="Blog Filter">
+                        <we-button class="dropdown-item blog_slider_owl" tabindex="-1" href="#"
+                            data-theme_decor_blog_slider="">Filter</we-button>
+                    </we-row>
+                </li>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="bizcommon_blog_slider_view" name="Blog Slider View">
+        <div class="container">
+            <div class="block-title text-center">
+                <h3 class="filter" t-if="not slider_header">Blog post</h3>
+                <h5 class="fw-bold" t-if="slider_header">
+                    <t t-out="slider_header.name" />
+                </h5>
+                <p class="w-md-75 w-xl-50 mx-auto mb-0" t-if="slider_header.blog_subtitle">
+                    <t t-out="slider_header.blog_subtitle" />
+                </p>
+               
+            </div>
+            
+            <div id='blog_2_owl_carosel' class="owl-carousel">
+                
+
+                <t t-as="slide" t-foreach="blog_slider_details">
+                    <div class="comm_blog_box">
+
+                        <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='slider-blog-image'
+                            t-if="slide.cover_properties">
+                            <t t-set="cover_property" t-value="json.loads(slide.cover_properties)" />
+
+                            <div class="section-post-media"
+                                t-attf-style="background-image: #{cover_property.get('background-image', 'none')}"
+                                t-if="slide.cover_properties">
+                            </div>
+                            <div class='comm_base_class'>
+                                <div class="blog-tag-style">
+                                    <span class="text-nowrap text-truncate">
+                                      
+                                        <a t-attf-href="/blog/#{slug(slide.blog_id)}" t-field="slide.blog_id" />
+                                    </span>
+                                </div>
+
+
+                                <div class="comm_hover_blog_content">
+                                    <a t-attf-href="/blog/#{slug(slide.blog_id)}/#{slug(slide)}"
+                                        class="text-reset text-decoration-none">
+                                        <h3 t-field="slide.name" class="" />
+                                        <div t-if="opt_blog_list_view" t-field="slide.teaser"
+                                            class="mt-2 o_wblog_read_text" />
+                                        <div t-else="" t-field="slide.teaser"
+                                            t-attf-class="mt-2 #{opt_blog_readable and 'o_wblog_normalize_font'}" />
+                                    </a>
+                                
+                                </div>
+                                <div class="d-flex justify-content-between pt16">
+                                    <div class="date-post text-primary">
+                                        <span class="date_span" t-field="slide.post_date"
+                                            t-options='{"format": "dd MMM, YYYY"}' />
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+                        </a>
+
+                    </div>
+
+                </t>
+            </div>
+        </div>
+    </template>
+
+</odoo>

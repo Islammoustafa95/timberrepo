@@ -1,0 +1,132 @@
+.o_header_is_scrolled{
+	.bizemart_header13{
+		@media(min-width: 1200px){
+			.top-header{
+				display: none !important;
+			}
+		}
+		.middle-header{
+			.middle-header-categs{
+				.categs_ul{
+					.dropdown-category{
+						a{
+							.categ-span{
+								flex-direction: row !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#wrapwrap{
+	.bizemart_header13{
+		a{
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+		.dropdown-menu{
+			color: o-color('900') !important;
+		}
+
+		.top-header{
+			.mobile-cart{
+				a{
+					span.text-900{
+						color: inherit !important;
+					}
+				}
+			}
+			#bizople-header-1{
+				#top_menu{
+					> li{
+						position: relative;
+					}
+				}
+			}
+			.top-right{
+				.header-myaccount{
+					.nav-link{
+						display: flex !important;
+						align-items: center;
+						.user_img{
+							margin: 0 !important;
+							padding: 0 !important;
+						}
+					}
+				}
+				.dropdown-toggle:after{
+					font-family: 'remixicon' !important;
+					border: 0;
+					font-size: 12px;
+					vertical-align: middle;
+					content: '\ea4c';
+					transition: 0.2s;
+					-webkit-transition: 0.2s;
+				}
+				.dropdown.show, .header-myaccount.show{
+					.dropdown-toggle:after{
+						transform: rotate(180deg) !important;
+					}
+				}
+			}
+		}
+
+		.middle-header-categs{
+			ul.categs_ul{
+				.dropdown-category{
+					a{
+						img{
+							width: 50px;
+							height: 50px;
+							object-fit: contain;
+						}
+						.categ-name{
+							margin-top: 5px;
+							font-weight: 600;
+						}
+					}
+					.dropdown-menu{
+						background-color: $primary;
+
+						li{
+							> a{
+								color: #fff !important;
+								font-weight: 600;
+								transition: 0.3s;
+							
+							}
+						}
+						&:after{
+							border-bottom-color: $primary !important;
+						}
+					}
+				}
+			}
+		}
+
+		/* mega menu alignment start*/
+		.top-header{
+			.top-nav-menu{
+				position: unset;
+				
+				nav#bizople-header-1{
+					position: unset;
+
+					#grocery-header{
+						ul#top_menu{
+							a.o_mega_menu_toggle{
+
+							}
+							.o_mega_menu{
+
+							}
+						}
+					}
+				}
+			}
+		}
+		/* mega menu alignment end */
+	}
+}

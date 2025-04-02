@@ -1,0 +1,258 @@
+
+.o_header_is_scrolled{
+	.bizemart_header11{
+		@media(min-width: 1200px){
+			.top-header,.middle-header{
+				display: none !important;
+			}
+		}
+		.bottom-header{
+      		background: white;
+
+			box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08) !important;
+		}
+		.bottom-header{
+			.categs_ul{
+				> li{
+					> a{
+						> span{
+							flex-direction: row !important;
+
+							.categ-name{
+								padding-left: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#wrapwrap{
+	header{
+		.bizemart_header11{
+			a{
+				color: inherit !important;
+				text-decoration: none !important;
+
+				&.dropdown-item{
+					color: #121212 !important;
+					&:active{
+						color: #fff !important;
+						background-color: $primary;
+					}
+				}
+			}
+			.top-header,.middle-header,.bottom-header{
+				//transition: 0.3s;
+			}
+		}
+		&:not(.o_header_is_scrolled){
+			.bizemart_header11{
+				.bottom-header,.middle-header{
+					background-color: unset;
+				}
+			}
+		}
+	}
+	&:not(.o_header_overlay){
+		.bizemart_header11{
+			.middle-header{
+				//background-color: rgba($secondary,0.9);
+				//opacity: 0.9;
+			}
+			.bottom-header{
+				//background-color: rgba($secondary,0.9);
+				//opacity: 0.9;
+			}
+		}
+	}
+	&.o_header_overlay{
+		.bizemart_header11{
+			.middle-header{
+				background-color: transparent;
+				opacity: 0.9;
+			}
+			.bottom-header{
+				background-color: transparent;
+				opacity: 0.9;
+			}
+		}
+	}
+}
+#wrapwrap{
+	.bizemart_header11{
+		/* mega menu alignment start*/
+		.top-header{
+			.left{
+				position: unset;
+				
+				nav#bizople-header-1{
+					position: unset;
+				}
+			}
+			.top-right{
+				.header-myaccount{
+					.nav-link{
+						display: flex !important;
+						align-items: center;
+						.user_img{
+							margin: 0 !important;
+							padding: 0 !important;
+						}
+					}
+				}
+				.dropdown-toggle:after{
+					font-family: 'remixicon' !important;
+					border: 0;
+					font-size: 12px;
+					vertical-align: middle;
+					content: '\ea4c';
+					transition: 0.2s;
+					-webkit-transition: 0.2s;
+				}
+				.dropdown.show, .header-myaccount.show{
+					.dropdown-toggle:after{
+						transform: rotate(180deg) !important;
+					}
+				}
+			}
+		}
+		/* mega menu alignment end */
+		.top-header{
+			#bizople-header-1{
+				#top_menu{
+					> li,.nav-item{
+						padding: 15px;
+						position: relative;
+						> a{
+							color: #fff !important;
+							padding: 0 !important;
+							span{
+								//color: #fff !important;
+								font-weight: 500;
+							}
+						}
+						& + li{
+							margin-left: 5px;
+						}
+						&:first-child{
+							padding-left: 0 !important;
+						}
+					}
+				}
+			}
+			.contact-us{
+				span{
+					color: #ffffff;
+				}
+				
+				a{ 
+					color: #ffffff !important;
+					transition: 0.3s;
+					&:hover{
+						color: $primary;
+					}
+				}
+			}
+			.header-myaccount{
+				color: #fff;
+				> .dropdown-menu{
+					color: #121212;
+				}
+			}
+		}
+		.middle-header{
+			.header-center{
+				.mobile-cart{
+					li.o_wsale_my_cart{
+						a{
+							span{
+								color: unset !important;
+							}
+						}
+					}
+				}
+			}
+			.header-media{
+				> a{
+					//text-decoration: none !important;
+					//color: #fff;
+					transition: 0.3s;
+					&:hover{
+						color: $primary;
+					}
+
+					i{
+						font-size: 18px;
+					}
+				}
+			}
+			.header-search{
+				a{
+					//color: #fff !important;
+					.show-search{
+						font-size: 18px;
+					}
+				}
+			}
+			.bizople-add-to-cart, .wishlist{
+				.o_wsale_my_cart, .o_wsale_my_wish{
+					a{
+						i{
+							//color: #fff !important;
+							font-size: 18px;
+						}
+					}
+				}
+			}
+		}
+		.bottom-header{
+			.categs_ul{
+				li.dropdown-category{
+					a{
+						> span{
+							display: flex;
+							flex-direction: column;
+							img{
+								width: 50px;
+								height: 50px;
+								object-fit: contain;
+							}
+							.categ-name{
+								//color: #fff;
+								font-weight: 600;
+								font-size: 16px;
+							}
+							transition: 0.3s;
+							
+						}
+					}
+					>a{
+						>span{
+							&:hover{
+								filter: brightness(0.8);
+							}
+						}
+					}
+					.dropdown-menu{
+						background-color: $primary;
+
+						li{
+							> a{
+								color: #fff !important;
+								font-weight: 600;
+								transition: 0.3s;
+								
+							}
+						}
+						&:after{
+							border-bottom-color: $primary !important;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

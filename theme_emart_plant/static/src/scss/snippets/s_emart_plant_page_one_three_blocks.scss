@@ -1,0 +1,12 @@
+// Three-Image Blocks Snippts
+.emart-plant-block-content{
+    .block-hover-effect{
+        overflow: hidden;
+         .img{
+             transition: all 300ms linear;
+             &:hover{
+               transform: scale(1.1);
+             }
+         }
+     }
+}

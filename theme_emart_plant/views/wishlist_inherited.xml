@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="bizemart_wishlist_page" inherit_id="website_sale_wishlist.product_wishlist" name="Wishlist Page">
+		<xpath expr="//section[hasclass('wishlist-section')]" position="attributes">
+			<attribute name="class" add="biz-emart-shop-wishlist" separator=" "/>
+		</xpath>
+		<xpath expr="//table[hasclass('table-comparator')]" position="replace">
+			<table class="table table-bordered table-hover text-center mt16 table-comparator " style="table-layout:auto" id="o_comparelist_table">
+                <tbody class="row">
+                    
+					<t t-foreach="wishes" t-as="wish">
+						<t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
+						<tr t-att-data-wish-id="wish.id"
+							t-att-data-product-id="wish.product_id.id"
+							t-att-data-product-tracking-info="'product_tracking_info' in combination_info and json.dumps(combination_info['product_tracking_info'])" class="col-md-6 col-lg-4 col-xl-3 col-hd-4 col-12 mb-4 wishlist-box">
+							<td>
+								<div class="button">
+                        			<button type="button" class="btn btn-link o_wish_rm no-bizemartsation"><small><span class="lnr lnr-cross d-block"></span></small></button>
+                        		</div>
+	                            <div class='td-img'>
+	                                
+									<a t-att-href="wish.product_id.website_url">
+										<img t-attf-src="/web/image/product.product/#{wish.product_id.id}/image_128" class="img img-fluid" alt="Product image"/>
+									</a>
+	                            </div>
+								<div class='text-start product-name'>
+	                                <h6><a t-att-href="wish.product_id.website_url"><t t-out="wish.product_id.display_name" /></a></h6>
+	                            </div>
+								<div class="product-price">
+									<t t-if="is_view_active('theme_emart_plant.snazzy_b2b_mode') and request.env.user._is_public()">
+										<td class="text-nowrap align-middle">
+											<t t-if="is_view_active('theme_emart_plant.loginsignup_popup_bizt')">
+												<a href='#' data-bs-toggle="modal" data-bs-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name" class="btn btn-link flat p-0 text-capitalize b2bloginbtn lpopen d-block d-md-inline-block text-decoration-none">
+													<span class="fa fa-user-circle me-1 text-primary"></span>
+													<span class="text-primary">Login </span>
+													<span>to See Price</span>
+												</a>
+											</t>
+											<t t-else=''>
+												<a role="button" class="btn btn-link b2bloginbtn flat p-0 text-capitalize d-block d-md-inline-block text-decoration-none" href="/web/login">
+													<span class="fa fa-user-circle me-1 text-primary"></span>
+													<span class="text-primary">Login </span>
+													<span>to See Price</span>
+												</a>
+											</t>
+										</td>
+									</t>
+									<t t-else="">
+										<td class="" t-if="combination_info['prevent_zero_price_sale']">
+											<span t-field="website.prevent_zero_price_sale_text"/>
+										</td>
+										<t class=" o_wish_price" t-else="">
+											<t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id or website.currency_id}"/>
+											<small t-if="combination_info['base_unit_price']" class="cart_product_base_unit_price d-block text-muted" groups="website_sale.group_show_uom_price">
+												<t t-call='website_sale.base_unit_price'><t t-set='product' t-value='wish.product_id' /></t>
+											</small>
+										</t>
+										<t t-set="store_time" t-value="website.store_timing()"/>
+										<t t-if="website.timings">
+											<t t-if="store_time['store'] == True">
+												<div class='text-center td-wish-btn'>
+													<input name="product_id" t-att-value="wish.product_id.id" type="hidden"/>
+													<button type="button"  id="add_to_cart_button" role="button" class="btn btn-primary btn-block o_wish_add mb4" >Add <span class='d-none d-md-inline'>to Cart</span></button>
+												</div>
+											</t>
+											<t t-else="">
+												<div class="store_time_warning">
+													<div class="alert alert-danger text-center mt16">
+														<strong>Store Closed</strong>
+													</div>
+												</div>
+											</t>
+										</t>
+										<t t-else="">
+											<div class='text-center td-wish-btn'>
+												<input name="product_id" t-att-value="wish.product_id.id" type="hidden"/>
+												<button type="button" id="add_to_cart_button" role="button" class="btn btn-primary btn-block o_wish_add mb4" >Add <span class='d-none d-md-inline'>to Cart</span></button>
+											</div>
+										</t>
+									</t>
+								</div>
+							</td>
+							
+							
+							
+						</tr>
+					</t>
+                </tbody>
+            </table>
+		</xpath>
+	</template>
+</odoo>

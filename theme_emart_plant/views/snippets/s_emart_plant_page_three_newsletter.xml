@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_three_newsletter" name="Newsletter">
+    <section class="emart-plant-newsletter  pt96 pb96">
+      <div class="container text-center">
+          <div class="text-block-one mb-5">
+              <h4 class="mb-4 biz-font-family">Join Our News Letter</h4>
+              <h6 class="text-600">Keep pushing forward. We've got your back.</h6>
+          </div>
+          <form class="s_newsletter_subscribe_form s_newsletter_list js_subscribe w-lg-75 mx-auto" data-vxml="001" data-list-id="2">
+              <div class="js_subscribed_wrap d-none">
+                  <p class="h4-fs text-center text-success js_subscribed_btn"><i class="fa fa-check-circle-o" role="img"/>Thanks for registering!</p>
+              </div>
+              <div class="js_subscribe_wrap">
+                  <div class="input-group">
+                      <input type="email" name="email" class="js_subscribe_value form-control" placeholder="Enter Your Email"/>
+                      <span class="input-group-append">
+                          <button role="button" class="btn btn-primary js_subscribe_btn h-100 o_submit px-5 text-white ms-2">Subscribe</button>
+                      </span>
+                  </div>
+              </div>
+          </form>
+      </div>
+    </section>
+  </template>
+</odoo>

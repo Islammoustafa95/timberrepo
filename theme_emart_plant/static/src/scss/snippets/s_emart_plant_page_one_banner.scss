@@ -1,0 +1,61 @@
+
+.emart-plant-homepage-one-banner {
+    .s_carousel_rounded {
+        .carousel-item {
+            padding-top: 300px;
+            padding-bottom: 300px;
+
+            @include media-breakpoint-down(lg) { 
+                padding-top: 120px !important;
+                padding-bottom: 120px !important;
+            }
+           
+        }
+
+        .carousel-control-prev-icon:before {
+            content: "\f104" !important;
+        }
+        .carousel-control-next-icon:before {
+            content: "\f105" !important;
+        }
+        .carousel-control-prev-icon,.carousel-control-next-icon {
+            &::before {
+                width: 50px !important;
+                height: 50px !important;
+                line-height: 50px !important;
+                border: 1px solid #ebebeb;
+                transition: 0.3s;
+                color: #121212 !important;
+                display: inline-block;
+                background-color: #fff;
+                font-family: "FontAwesome";
+                background-image: none !important;
+                border-radius: 50%;
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
+            }
+            &:hover::before {
+                background: $primary !important;
+                font-family: "FontAwesome";
+                color: #fff !important;
+                border-color: $primary !important; 
+            }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+        &:hover {
+            .carousel-control-prev,
+            .carousel-control-next {
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+     
+    }
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_one_categories" name="Shop Categories">
+    <section class="emart-plant-homepage-one-multibanner  pt24 pb64">
+      <div class="container-fluid px-xl-4">
+          <div class="text-block-four mb-5 text-center">
+              <p class="text-400 mb-2">MORE INSPIRATION</p>
+              <h4 class="stylelish-text biz-font-family">Big Collection Of Plants</h4>
+          </div>
+          <div class="row">
+              <div class="col-lg-5 col-md-12 banner-content">
+                  <div class="container p-0">
+                      <div class="row">
+                          <div class="banner-content content-one col-lg-12 col-md-12">
+                              <div class="block-hover-effect">
+                                  <img src="/theme_emart_plant/static/src/img/page1_block1.jpg" class="img img-fluid w-100" />
+                              </div>
+                              <div class="banner-title">
+                                <a href="#" class="btn btn-custom flat text-capitalize btn-lg"  style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-7 col-md-12 banner-content">
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="banner-content col-lg-7 col-md-7 content-one">
+                            <div class="block-hover-effect" style="overflow: hidden;">
+                                <img src="/theme_emart_plant/static/src/img/page1_block2.jpg" class="img img-fluid w-100" />
+                            </div>
+                            <div class="banner-title">
+                              <a href="#" class="btn btn-custom flat text-capitalize btn-lg"  style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                            </div>
+                        </div>
+                        <div class="banner-content  content-one col-lg-5 col-md-5 content-one">
+                          <div class="block-hover-effect h-100" style="overflow: hidden;">
+                              <img src="/theme_emart_plant/static/src/img/page1_block3.jpg" class="img img-fluid w-100" />
+                          </div>
+                          <div class="banner-title">
+                            <a href="#" class="btn btn-custom flat text-capitalize btn-lg"  style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                          </div>
+                      </div>
+                      <div class="banner-content col-lg-4 col-md-4 content-one">
+                        <div class="block-hover-effect block-four-image" style="overflow: hidden;">
+                            <img src="/theme_emart_plant/static/src/img/page1_block4.jpg" class="img img-fluid w-100" />
+                        </div>
+                        <div class="banner-title">
+                          <a href="#" class="btn btn-custom flat text-capitalize btn-lg"  style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                        </div>
+                    </div>
+                    <div class="banner-content col-lg-8 col-md-8 content-one">
+                      <div class="block-hover-effect" style="overflow: hidden;">
+                          <img src="/theme_emart_plant/static/src/img/page1_block5.jpg" class="img img-fluid w-100" />
+                      </div>
+                      <div class="banner-title">
+                        <a href="#" class="btn btn-custom flat text-capitalize btn-lg"  style="border-style: solid; border-width: 0px; background-color: #fff;">Shop Plants</a>
+                      </div>
+                  </div>
+                    </div>
+                </div>
+            </div>  
+          </div>
+      </div>
+    </section>
+  </template>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_three_history" name="History page">
+        <section class="emart-plant-homepage-three-content background-image-one pt96 pb96" style="background-image: url(/theme_emart_plant/static/src/img/pla3_4.jpg); background-size: cover; background-position: center;" >
+            <section class="emart-plant-grid-features pt24 pb32">
+             <div class="container">
+               <div class="row justify-content-center">
+                   <div class="col-lg-4 col-md-6 mb-3">
+                       <div class="plant-block-one bg-white shadow">
+                           <div class="block-content d-flex">
+                               <img src="/theme_emart_plant/static/src/img/page1_icon1.png" class="img img-fluid me-3" />
+                               <div class="content">
+                                   <p class="mb-1 grid-title fw-bold">EASY SHIPPING</p>
+                                  <p class="m-0 grid-subtitle text-500"><small>ALL ORDER ABOUT $50</small></p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6  mb-3">
+                       <div class="plant-block-one bg-white shadow">
+                           <div class="block-content d-flex">
+                               <img src="/theme_emart_plant/static/src/img/page1_icon2.png" class="img img-fluid me-3" />
+                               <div class="content">
+                                   <p class="mb-1 grid-title fw-bold">24/7 SUPPORT</p>
+                                  <p class="m-0 grid-subtitle text-500"><small>0123 456 789</small></p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-4 col-md-6  mb-3">
+                       <div class="plant-block-one bg-white shadow">
+                           <div class="block-content d-flex">
+                               <img src="/theme_emart_plant/static/src/img/page1_icon3.png" class="img img-fluid me-3" />
+                               <div class="content">
+                                   <p class="mb-1 grid-title fw-bold">100% MONEY RETURN</p>
+                                  <p class="m-0 grid-subtitle text-500"><small>10 DAYS TO RETURN</small></p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+              </div>
+            </section>
+            <section class="emart-plant-text-block pt32">
+           <div class="container text-center">
+               <div class="text-block-one mb-5">
+                   <h1 class="biz-font-family m-0">Plant History</h1>
+                   <p class="text-400">THE FUTURE IS GREEN</p>
+               </div>
+               <div class="text-block-two pt24">
+                 <h6 class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </h6>
+                  <p class="text-600">The last important transition in the history of plants is from pines and spruces to flowering plants such as oak trees and rose bushes. Leaves adapted to make all the reproductive organs of the plant appear in a single special structure, better known as the flower. This transformation allowed flowering plants to become the most important plant group on earth. </p>
+               </div>
+           </div>
+            </section>
+       </section>
+  </template>
+</odoo>

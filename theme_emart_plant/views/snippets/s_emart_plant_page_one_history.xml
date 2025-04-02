@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="s_emart_plant_page_one_history" name="History Content">
+    <section class="emart-plant-text-block pb96">
+      <div class="container text-center">
+          <div class="text-block-one mb-5">
+              <h1 class="m-0 biz-font-family">Plant History</h1>
+              <p class="text-400">THE FUTURE IS GREEN</p>
+          </div>
+          <div class="text-block-two">
+            <h6 class="mb-5">Around 430 million years ago, in the Silurian, the first terrestrial plants appeared. There are now about 391,000 plant species, divided into four main groups: mosses, ferns, gymnosperms and angiosperms.   </h6>
+             <p class="text-600">The last important transition in the history of plants is from pines and spruces to flowering plants such as oak trees and rose bushes. Leaves adapted to make all the reproductive organs of the plant appear in a single special structure, better known as the flower. This transformation allowed flowering plants to become the most important plant group on earth. </p>
+          </div>
+      </div>
+  </section>
+  </template>
+</odoo>

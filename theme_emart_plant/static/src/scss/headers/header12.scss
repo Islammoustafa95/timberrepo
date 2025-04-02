@@ -1,0 +1,166 @@
+.o_header_is_scrolled{
+	.bizemart_header12{
+		@media(min-width: 1200px){
+			.top-header{
+				display: none !important;
+			}
+		}
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08) !important;
+      background: white;
+
+	}
+}
+
+.bizemart_header12{
+	a{
+		color: inherit !important;
+		text-decoration: none !important;
+	}
+	/* mega menu alignment start*/
+		.top-header{
+			.top-nav-menu{
+				position: unset;
+				
+				nav#bizople-header-1{
+					position: unset;
+				}
+			}
+		}
+	/* mega menu alignment end */
+	.dropdown-menu{
+		color: o-color('900');
+	}
+	.top-header{
+		.header-media{
+			a{
+				&:hover{
+					filter: brightness(0.8);
+					color: inherit !important;
+				}
+				font-size: 18px;
+				color: inherit !important;
+			}
+		}
+		#bizople-header-1{
+			#top_menu{
+				> li,.nav-item{
+					padding: 15px;
+					position: relative;
+					> a{
+						padding: 0 !important;
+						span{
+							font-weight: 600;
+						}
+					}
+					& + li{
+						margin-left: 5px;
+					}
+					&:first-child{
+						padding-left: 0 !important;
+					}
+				}
+			}
+		}
+		.contact-us{
+			> span{
+				font-weight: 600;
+			}
+			a{
+				transition: 0.3s;
+				&:hover{
+					filter: brightness(0.8);
+				}
+			}
+		}
+		.top-right{
+			.header-myaccount{
+				.nav-link{
+					display: flex !important;
+					align-items: center;
+					.user_img{
+						margin: 0 !important;
+						padding: 0 !important;
+					}
+				}
+			}
+			.dropdown-toggle:after{
+				font-family: 'remixicon' !important;
+				border: 0;
+				font-size: 12px;
+				vertical-align: middle;
+				content: '\ea4c';
+				transition: 0.2s;
+				-webkit-transition: 0.2s;
+			}
+			.dropdown.show, .header-myaccount.show{
+				.dropdown-toggle:after{
+					transform: rotate(180deg) !important;
+				}
+			}
+		}
+	}
+	.middle-header{
+		.middle-header-categs{
+			ul.categs_ul{
+				.dropdown-category{
+					a{
+						img{
+							width: 50px;
+							height: 50px;
+							object-fit: contain;
+							//margin-right: 10px;
+						}
+						.categ-name{
+							font-weight: 600;
+						}
+					}
+
+					.dropdown-menu{
+						background-color: $primary;
+
+						li{
+							> a{
+								color: #fff !important;
+								font-weight: 600;
+								transition: 0.3s;
+								
+							}
+						}
+						&:after{
+							border-bottom-color: $primary !important;
+						}
+					}
+				}
+			}
+		}
+		.middle-header_right{
+			.header-search{
+				.show-search{
+					font-size: 18px;
+				}
+			}
+			.bizople-add-to-cart, .wishlist{
+				.o_wsale_my_cart, .o_wsale_my_wish{
+					a{
+						font-size: 18px;
+						.my_wish_quantity, .my_cart_quantity{
+							color: #fff !important;
+							background-color: $primary;
+						}
+					}
+				}
+			}
+		}
+		.mobile-cart{
+			a{
+				span.text-900{
+					color: inherit !important;
+				}
+				.my_cart_quantity{
+					color: #fff !important;
+					background-color: $primary;
+				}
+			}
+		}
+	}
+}

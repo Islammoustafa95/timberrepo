@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="theme_emart_plant_header13" inherit_id="website.layout" name="Header Thirteen" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="biz-emart-shop-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="bizemart_header13" t-attf-class="bizemart_header13 navbar-light o_cc">
+				<section class="top-header border-xl-bottom navbar-light py-2 py-xl-2">
+					<div class="container">
+						<div class="row">
+							<div class="mobile-sidebar-toggle middle-header-center col-xl-2 text-center d-flex align-items-center">
+								<button type="button" id="show-sidebar" class="mobile-sidebar-toggle btn btn-md d-block d-xl-none me-auto">
+									<span class="ti ti-view-grid"></span>
+								</button>
+								<div class="website-logo-left align-items-center d-flex">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a>
+								</div>
+								<t t-call="theme_emart_plant.bizemart_header_mobile_cart">
+									<t t-set="_class" t-value="'d-block d-xl-none ms-auto'"/>
+								</t>
+							</div>
+							
+							<div class="top-nav-menu col-xl-4 my-auto d-none d-xl-block">
+								<nav class="navbar navbar-expand-lg p-0" id="bizople-header-1">
+									<div class="collapse navbar-collapse" id="biz-emart-shop-header">
+										<t t-call="website.navbar_nav" id="top_menu">
+											<t t-set="_nav_class" t-valuef="me-auto"/>
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">                   
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</t>
+									</div>
+								</nav>
+							</div>
+							
+							<div class="top-center col-lg-3 my-auto d-none d-xl-block">
+								<div class="contact-us text-center">
+									<span class="ri ri-phone-fill align-middle"/>
+									<span>+1 (800) 312-2121</span>
+								</div>
+							</div>
+							<div class="top-right col-lg-3 justify-content-end my-auto d-none d-xl-flex align-items-center">
+								<div class="header-search align-middle d-inline-block">
+									<a href="#" class="nav-link">
+										<span class="ri ri-search-2-line show-search align-middle me-4"></span>
+									</a>
+								</div>
+		                		<div class="bizople-add-to-cart align-middle" id="">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+								<div class="wishlist align-middle">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+								<t t-call="theme_emart_plant.theme_emart_plant_signin_main_template">
+									<t t-set="_myaccount_class" t-value="'d-flex align-items-center ms-auto'"/>
+									<t t-set="_icon" t-value="True"/>
+									<t t-set="_text" t-value="False"/>
+								</t>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="middle-header py-3 navbar-light d-none d-xl-block">
+					<div class="container">
+						<div class="row align-items-center">
+							
+							<div class="col-xl-12 middle-header-categs d-none d-xl-block">
+								<t t-set="categories" t-value="website.get_categories() if website else None"/>
+						        <t t-if="categories">
+						            <ul class="ps-0 d-flex categs_ul m-0 justify-content-center">
+						            	<li class="nav-item list-unstyled dropdown-category">
+						            		<a class="nav-link" href="/shop">
+								            	<span class="categ-span d-flex flex-column align-items-center">
+								            		<img class="img img-fluid" width="50" height="50" src="/theme_emart_plant/static/src/img/header-all-categs.png"></img>
+									            	<span class="categ-name">All</span>
+										        </span>
+								            </a>
+						            	</li>
+							            <t t-foreach="categories['categories']" t-as="categ">
+											<t t-if="categ.category_in_header">
+												<li class="dropdown nav-item list-unstyled dropdown-category">
+										            <a class="nav-link" t-att-href="'/shop/category/%s' % (categ.id)">
+										            	<span class="categ-span d-flex flex-column align-items-center">
+										            		<img class="img img-fluid" width="50" height="50" t-att-src="website.image_url(categ, 'category_icon')"></img>
+											            	<span class="categ-name" t-out="categ.name"/>
+												        </span>
+										            </a>
+										            
+										            <t t-set="child_categories" t-value="website.get_categories_in_header(categ.id)"/>
+										            <ul t-if="child_categories" class="dropdown-menu">
+										                <t t-foreach="child_categories" t-as="categ">
+										                    <t t-call="theme_emart_plant.header_categories_template"/>
+										                </t>
+										            </ul>
+									        	</li>
+									        </t>
+										</t>
+									</ul>
+								</t>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-xl-none">
+				<t t-call="theme_emart_plant.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_emart_plant.bizople_mbl_category_bar"/>
+			<t t-call="theme_emart_plant.search_popup"/>
+		</xpath>
+	</template>
+</odoo>

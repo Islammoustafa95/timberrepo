@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="add_cover_quickview" inherit_id="website.layout" active="True">
+        <xpath expr="//header" position="before">
+            <div class="quick_modal_wrap"></div>
+        </xpath>
+    </template>
+
+    <template id="get_product_qv_details_template" name="Quick View Details">
+        <t t-if="product">
+            <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+            <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1)"/>
+            <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+
+            <div class="quick-modal-backdrop"></div>
+            <t t-set="store_time" t-value="website.store_timing()"/>
+            <div class="quick-modal">
+                <a href="#" class="quick_close two d-none">
+                    <i class="ri ri-close-line align-middle text-dark"></i>
+                </a>
+                <div itemscope="itemscope" itemtype="http://schema.org/Product" class="js_sale quick-popout">
+                    <div class="container oe_website_sale" id="product_detail">
+                        <div id="product_detail_main" class="row justify-content-center" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
+                            <div class="col-md-12 col-xl-5 product-img-section">
+                                <!-- Product Slider -->
+                                <div class="product-img-box o_wsale_product_images">
+                                    <t t-call="website_sale.shop_product_images"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xl-7 quick_modal_product_details" id="product_details">
+                                <span itemprop="url" style="display:none;" t-out="product.website_url"/>
+                                <a href="#" class="quick_close one">
+                                    <i class="ri ri-close-line align-middle text-dark"></i>
+                                </a>
+                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                    <div class="js_product js_main_product pt16">
+                                        <div class="product-name-share pb16 align-items-center">
+                                            <h1 itemprop="name" t-field="product.name" class="product-name m-0">Product Name</h1>
+                                            <t t-call="website_sale.product_price" />
+                                            <div class="ms-auto align-items-center">
+                                                <t t-if="is_view_active('website_sale.product_comment')">
+                                                    <t t-call="theme_emart_plant.product_item_stars"/>
+                                                </t>
+                                                <div class="pro-desc pb16" t-if="product.description_sale">
+                                                    <p class="description mb-0" t-field="product.description_sale" />
+                                                </div>
+                                                <a t-att-href="'/shop/%s' % slug(product)" class="view-detail text-decoration-none">
+                                                    View full product details 
+                                                    <span class="ri ri-arrow-right-line align-middle"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <t t-placeholder="select">
+                                            <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                            <t t-if="combination" t-call="website_sale.variants">
+                                                <t t-set="ul_class" t-value="'flex-column'" />
+                                                <t t-set="parent_combination" t-value="None" />
+                                            </t>
+                                            <t t-else="">
+                                                <ul class="d-none js_add_cart_variants mt-3" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                            </t>
+                                        </t>
+                                        <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                        <div id="o_wsale_cta_wrapper" class="d-flex align-items-center flex-wrap">
+                                            <t t-if="is_view_active('website_sale.product_quantity')">
+                                                <div t-attf-class="border-0 css_quantity input-group  align-items-center bizemart_quantity product-detail-label-value {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 align-middle #{'input-group-lg' if ctaSizeBig else ''}" contenteditable="false">
+                                                    <div class="prod-attribute-label">
+                                                        <span class="text-label">Quantity</span>
+                                                    </div>
+                                                    <div class="prod-attribute-value control-qty-cart d-flex">
+                                                        <div class="input-group-prepend">
+                                                            <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                                <i class="fa fa-minus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                                                        <div class="input-group-append">
+                                                            <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                                                <i class="fa fa-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                            <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center w-100 w-xl-auto mt-3 mt-xl-0">
+                                                <div class="ajax_cart_modal_tools ms-2 me-2">
+                                                    <a role="button" class="btn btn-md btn-cart btn-primary a-submit-btn ajax-cart-btn  js_check_product fw-bold two w-100" href="#">
+                                                        <span class="ri ri-shopping-bag-2-line me-2 align-middle"></span>
+                                                        <span class="align-middle">ADD TO CART</span>
+                                                    </a>
+                                                </div>
+
+                                                <t t-if="is_view_active('website_sale.product_buy_now')">
+                                                    <t t-if="website.timings">
+                                                        <t t-if="store_time['store'] == True">
+                                                            <t t-if="uid and uid &gt; 0">
+                                                                <a role="button" t-attf-class="btn btn-secondary  btn-lg o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                    <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                    <span>BUY NOW</span>
+                                                                </a>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-if="website.prevent_guest_checkout">
+                                                                    <t t-if="request.website.viewref('theme_emart_plant.loginsignup_popup_bizt').active">
+                                                                        <a role="button" t-attf-class="btn btn-secondary  btn-lg openpop buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#" data-bs-toggle="modal" data-bs-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+                                                                            <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                            <span>BUY NOW</span>
+                                                                        </a>
+                                                                    </t>
+                                                                    <t t-else=''>
+                                                                        <a role="button" t-attf-class="btn btn-secondary  btn-lg buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="/web/login">
+                                                                            <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                            <span>BUY NOW</span>
+                                                                        </a>
+                                                                    </t>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <a role="button" t-attf-class="btn btn-secondary  btn-lg o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                            </t>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <div class="alert alert-warning text-center mt16">
+                                                                <span class="d-flex flex-column">
+                                                                    <strong>Store Closed</strong>
+                                                                    <span>
+                                                                        Please Visit Between <t t-out="store_time['opening_time']"/>
+                                                                        to <t t-out="store_time['closing_time']"/>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </t>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <t t-if="uid and uid &gt; 0">
+                                                            <a role="button" t-attf-class="btn btn-secondary  btn-lg o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                <span>BUY NOW</span>
+                                                            </a>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <t t-if="website.prevent_guest_checkout">
+                                                                <t t-if="request.website.viewref('theme_emart_plant.loginsignup_popup_bizt').active">
+                                                                    <a role="button" t-attf-class="btn btn-secondary  btn-lg openpop buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#" data-bs-toggle="modal" data-bs-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                                <t t-else=''>
+                                                                    <a role="button" t-attf-class="btn btn-secondary  btn-lg buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="/web/login">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <a role="button" t-attf-class="btn btn-secondary  btn-lg o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                    <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                    <span>BUY NOW</span>
+                                                                </a>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                                <div class="biz-compare-button">
+                                                    <a type="button" role="button" class="btn btn-default o_add_wishlist ms-1" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id if product.product_variant_ids else '0'" data-action="o_wishlist">
+                                                    <span class="ri ri-heart-line" role="img" aria-label="Add to wishlist"></span>
+                                                    </a>
+                                                    <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()" />
+                                                    <button t-if="product_variant_id" type="button" role="button" class="btn btn-default o_add_compare ms-1" title="Compare" aria-label="Compare" t-att-data-product-product-id="product_variant_id" data-action="o_comparelist"><span class="ri ri-arrow-left-right-line"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="availability_messages o_not_editable"/>
+                                        <t t-nocache="The wishlist depends on the user and must not be shared with other users. The product come from the controller.">
+                                            <t t-set="in_wish" t-value="product in products_in_wishlist"/>
+			                                <t t-set="product_variant_id" t-value="in_wish or product._get_first_possible_variant_id()"/>
+                                            <button t-if="product_variant" type="button" role="button" class="btn btn-link px-0 pe-3 o_add_wishlist_dyn d-none" t-att-disabled='in_wish' t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist" title="Add to wishlist"><i class="fa fa-heart-o me-2" role="img" aria-label="Add to wishlist"/>Add to wishlist</button>
+                                        </t>
+                                    <div id="contact_us_wrapper" t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
+                                        <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+                                            <div class="container">
+                                                <a t-att-href="website.contact_us_button_url" class="btn btn-primary btn_cta">
+                                                    Contact Us
+                                                </a>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </form>
+                            <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                            <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+    <t t-if="error">
+        <div class="quick-modal-backdrop"></div>
+        <div class="quick-modal">
+            <div class="quick-popout">
+                <button class="quick_close">
+                    <i class="lnr lnr-cross"></i>
+                </button>
+                <div class="alert alert-warning m-4" t-out="error"/>
+            </div>
+        </div>
+    </t>
+</template>
+
+<!-- select variant popup start -->
+
+<template id="get_product_so_details_template" name="Select Option Details">
+    <t t-if="product">
+        <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1)"/>
+        <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+
+        <div class="select-modal-backdrop"></div>
+
+        <div class="select-modal">
+            <div itemscope="itemscope" itemtype="http://schema.org/Product" class="js_sale select-popout">
+                <a href="#" class="select_close">
+                    <i class="ri ri-close-line align-middle text-dark"></i>
+                </a>
+                <div class="container oe_website_sale wineshop_product_page p-0" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout" id="product_detail_main">
+                    <div class="row m-0">
+                      
+                        <div class="col-md-12 text-center pt-3" id="product_details">
+                            <div>
+                                
+                                <span itemprop="url" style="display:none;" t-out="product.website_url"/>
+                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                    <div class="js_product js_main_product">
+                                       
+                                        <div class="col-md-12 product-img-section">
+                                            <div class="d-flex align-items-center">
+                                                <div class="product-img-box o_wsale_product_images">
+                                                    <t t-if="is_view_active('theme_emart_glasses.shop_page_image_bgcolor')">
+                                                        <div class="add_image_bgcolor"></div>
+                                                    </t>
+                                                    <t t-call="website_sale.shop_product_images"/>
+                                                </div>
+                                                <div class="ps-2 text-left">
+                                                    <div class="product-name-share d-block">
+                                                        <h4 itemprop="name" t-field="product.name" class="product-name mb-0">Product Name</h4>
+                                                    </div>
+                                                    <div class="">
+                                                        <t t-call="website_sale.product_price"/>
+                                                        <small t-if="combination_info['base_unit_price']" class="ms-1 text-muted o_base_unit_price_wrapper d-none" groups="website_sale.group_show_uom_price">
+                                                            <t t-call='website_sale.base_unit_price'/>
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                      
+                                        <t t-placeholder="select">
+                                            <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                            <input t-if="product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="product.public_categ_ids.ids[0]" />
+                                            <!-- <input t-if="product.product_tag_ids.ids" type="hidden" class="product_tag_id" name="product_tag_id" t-att-value="product.product_tag_ids.ids[0]" /> -->
+                                            <t t-if="combination" t-call="website_sale.variants">
+                                                <t t-set="ul_class" t-valuef="flex-column" />
+                                                <t t-set="parent_combination" t-value="None" />
+                                            </t>
+                                            <t t-else="">
+                                                <ul class="d-none js_add_cart_variants mb-0" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                            </t>
+                                        </t>
+                                        <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                        <div class="availability_messages o_not_editable"/>
+                                        <div id="o_wsale_cta_wrapper" class="">
+                                            <t t-if="is_view_active('website_sale.product_quantity')">
+                                                <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} mx-auto align-middle" contenteditable="false">
+                                                    <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                    <input type="text" class="form-control quantity text-center text-primary border-0 fw-bold" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                                                    <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                                        <i class="fa fa-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </t>
+                                            <div id="add_to_cart_wrap" t-attf-class="mt-3 btn-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center w-100">
+                                                <div class="ajax_cart_modal_tools flex-fill">
+                                                    <a role="button" class="btn btn-md btn-cart btn-primary a-submit ajax-cart-btn  shop-cart w-100 two" href="#">
+                                                        <span class="ri ri-shopping-bag-2-line me-2 align-middle"></span>
+                                                        <span class="align-middle">ADD TO CART</span>
+                                                    </a>
+                                                </div>
+
+                                                <t t-if="is_view_active('website_sale.product_buy_now')">
+                                                    <t t-if="website.timings">
+                                                        <t t-if="store_time['store'] == True">
+                                                            <t t-if="uid and uid &gt; 0">
+                                                                <a role="button" t-attf-class="btn btn-secondary text-white o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                    <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                    <span>BUY NOW</span>
+                                                                </a>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-if="website.prevent_guest_checkout">
+                                                                    <t t-if="request.website.viewref('theme_emart_plant.loginsignup_popup_bizt').active">
+                                                                        <a role="button" t-attf-class="btn btn-secondary text-white openpop buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#" data-bs-toggle="modal" data-bs-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+                                                                            <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                            <span>BUY NOW</span>
+                                                                        </a>
+                                                                    </t>
+                                                                    <t t-else=''>
+                                                                        <a role="button" t-attf-class="btn btn-secondary text-white buy_now_login sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="/web/login">
+                                                                            <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                            <span>BUY NOW</span>
+                                                                        </a>
+                                                                    </t>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <a role="button" t-attf-class="btn btn-secondary text-white o_we_buy_now sticky_cart_button d-block d-sm-inline-block mt-3 mt-md-0" href="#">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                            </t>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <div class="alert alert-warning text-center mt16">
+                                                                <span class="d-flex flex-column">
+                                                                    <strong>Store Closed</strong>
+                                                                    <span>
+                                                                        Please Visit Between <t t-out="store_time['opening_time']"/>
+                                                                        to <t t-out="store_time['closing_time']"/>
+                                                                    </span>
+                                                                </span>
+                                                            </div>
+                                                        </t>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <t t-if="uid and uid &gt; 0">
+                                                            <a role="button" t-attf-class="btn btn-secondary text-white o_we_buy_now sticky_cart_button d-block d-sm-inline-block" href="#">
+                                                                <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                <span>BUY NOW</span>
+                                                            </a>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <t t-if="website.prevent_guest_checkout">
+                                                                <t t-if="request.website.viewref('theme_emart_plant.loginsignup_popup_bizt').active">
+                                                                    <a role="button" t-attf-class="btn btn-secondary text-white openpop buy_now_login sticky_cart_button d-block d-sm-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                                <t t-else=''>
+                                                                    <a role="button" t-attf-class="btn btn-secondary text-white buy_now_login sticky_cart_button d-block d-sm-inline-block" href="/web/login">
+                                                                        <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                        <span>BUY NOW</span>
+                                                                    </a>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <a role="button" t-attf-class="btn btn-secondary text-white o_we_buy_now sticky_cart_button d-block d-sm-inline-block" href="#">
+                                                                    <span class="ri ri-share-forward-line align-middle me-2 text-white"/>
+                                                                    <span>BUY NOW</span>
+                                                                </a>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <t t-nocache="The wishlist depends on the user and must not be shared with other users. The product come from the controller.">
+                                            <t t-set="in_wish" t-value="product in products_in_wishlist"/>
+			                                <t t-set="product_variant_id" t-value="in_wish or product._get_first_possible_variant_id()"/>
+                                            <button t-if="product_variant" type="button" role="button" class="btn btn-link px-0 pe-3 o_add_wishlist_dyn d-none" t-att-disabled='in_wish' t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist" title="Add to wishlist"><i class="fa fa-heart-o me-2" role="img" aria-label="Add to wishlist"/>Add to wishlist</button>
+                                        </t>
+                                        <div id="contact_us_wrapper" t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
+                                            <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+                                                <div class="container">
+                                                    <a t-att-href="website.contact_us_button_url" class="btn btn-primary btn_cta">
+                                                            Contact Us
+                                                    </a>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                                <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+    <t t-if="error">
+        <div class="select-modal-backdrop"></div>
+        <div class="select-modal">
+            <div class="select-popout">
+                <button class="quick_close">
+                    <i class="fa fa-close"></i>
+                </button>
+                <div class="alert alert-warning m-4" t-out="error"/>
+            </div>
+        </div>
+    </t>
+</template>
+<!-- similar  product popup -->
+<template id="get_product_similar_details_template" name="Similar View Details">
+        <t t-if="product">
+            <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+            <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty)"/>
+            <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+            
+            <div class="similar-modal-backdrop"></div>
+ 
+            <div class="similar-modal">
+                <div itemscope="itemscope" itemtype="http://schema.org/Product" class="js_sale similar-popout">
+                    <button class="similar_close btn p-0"><div class="position-relative close_icon">
+                        <i class="ri ri-close-line align-middle text-dark"></i>
+                    </div></button>
+                    <h4 class="cart-title text-center mt24">
+                        <span>Related Products</span>
+                    </h4>
+                    <div class="container oe_website_sale pt24 pb24" id="product_detail">
+                        <div class="" id="product_detail_main" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
+                            <div t-if="not product" class="empty_cart">
+                                no similar
+                        </div>
+                        <div class="similar-products-list px-md-5">
+                            <div class="owl-carousel" id="estore_similar_popup">
+                                <t t-foreach="product.alternative_product_ids" t-as="ap">
+                                    <div class="similar_product_box">
+                                        <div t-attf-class="similar-product-image {{'add_bg_color' if is_view_active('theme_emart_plant.product_background_color') else ''}}">
+                                            <a t-attf-href="/shop/#{ap.id}">
+                                                <img class="img img-fluid lazyload mx-auto" t-attf-src="/web/image/product.template/#{ap.id}/image_1920"></img>
+                                            </a>
+                                         
+                                            
+                                        </div>
+                                        <div class="similar-text-box mt-1">
+                                            <div class="similar_product_information_text m-0">
+                                                <a t-attf-href="/shop/#{ap.id}" class="h6 text-decoration-none product_name">
+                                                    <t t-out="ap.name"/>
+                                                   
+                                                </a>
+                                               
+                                              
+                                            </div>
+
+                                            <div itemprop="description" class="text-o-color-5 mb-1 small product_desc" t-field="ap.description_sale"/>
+                                            
+                                            <div class="d-flex justify-content-between">
+                                                <t t-set="combination_info" t-value="ap._get_combination_info(combination,only_template=True, add_qty=add_qty)"/>
+                                                <t t-if="is_view_active('theme_emart_plant.estore_b2b_mode') and request.env.user._is_public()"></t>
+
+                                                <t t-else="">
+                                                    <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                                                        <span class="mb-0 price" t-if="combination_info['price']" t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                        <del t-attf-class="text-danger ms-1 mb-0 h6 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                        <span itemprop="price" style="display:none;" t-out="combination_info['price']" />
+                                                        <span itemprop="priceCurrency" style="display:none;" t-out="website.currency_id.name" />
+                                                    </div>
+                                                    <t t-if="combination_info['has_discounted_price']">
+                                                        <t t-set="diff_amount" t-value="round(combination_info['list_price'] - combination_info['price'],2)"/>
+                                                        <t t-set="dis_per" t-value="round(diff_amount*100/combination_info['list_price'])"/>
+                                                    </t>
+                                                </t>
+                                                <t t-if="is_view_active('website_sale.product_comment')">
+                                                    <t t-call="theme_emart_plant.product_item_stars"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                 </div>
+            </div>
+        </t>
+        <t t-if="error">
+            <div class="similar-modal-backdrop"></div>
+            <div class="similar-modal">
+                <div class="similar-popout">
+                    <button class="similar_close btn p-0"><div class="position-relative close_icon"></div></button>
+                    <div class="alert alert-warning m-4" t-out="error"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+<!-- select variant popup end -->
+</odoo>

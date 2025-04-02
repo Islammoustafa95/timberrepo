@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+    <template id="product_other_info" inherit_id="website_sale.product" name="Product Other Info Block" active="False" customize_show="False" >
+        <xpath expr="//section[@id='product_detail']/div[2]" position="inside">
+            <div class="col-md-3 col-sm-3 col-lg-2 col-xs-12">
+                <section class="product-services">
+                    <div class="container">
+                        <div class="row service-section">
+                            <ul class="">
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_emart_plant/static/src/img/icon-1.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary"> Free Delivery</h4>
+                                        <p>From $59.89</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_emart_plant/static/src/img/icon-2.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Support 24/7</h4>
+                                        <p>Online 24 hours</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_emart_plant/static/src/img/icon-3.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Free Return</h4>
+                                        <p>365 a day</p>
+                                    </div>
+                                </li>
+                                <li class="mb32">
+                                    <div class="service-image">
+                                        <img src="/theme_emart_plant/static/src/img/icon-4.png"/>
+                                    </div>
+                                    <div class="service-info">
+                                        <h4 class="text-primary">Payment Method</h4>
+                                        <p>Secure payment</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="product_brand_filter_template" name="Product Brand Filter Template">
+		<t t-set="brands" t-value="website.get_product_brands(category)"/>
+		<t t-set="hasActiveBrand" t-value="any((b.id in active_brand_list) for b in brands)"/>
+		<t t-set="_status" t-value="'inactive'"/>
+		<t t-if="hasActiveBrand" t-set="_status" t-value="'active'"/>
+
+		<t t-if="brands">
+			<div class="brand_filter_content">
+				<button id="bizemart_brands_title" t-attf-class="collapsed accordion-button shadow-none rounded-0 {{button_classes}} {{ not active_brand_list and 'collapsed'}}"
+					type="button"
+					t-att-data-status="_status"
+					data-bs-toggle="collapse"
+					data-bs-target="#bizemart_brands"
+					t-att-aria-expanded="_status == 'active' and 'True' or 'False'"
+					aria-controls="bizemart_brands">
+					<b>Brands</b>
+				</button>
+				<div t-attf-class="accordion-collapse collapse nav nav-pills brand-c" 
+						t-att-aria-expanded="(_status == 'active') and 'True' or 'False'" id="bizemart_brands">
+					<div t-attf-class="brand-height-overflow {{body_classes}}">
+						<t t-set="count_value" t-value="0"/>
+						<t t-foreach="brands" t-as="b">
+							<t t-set="count_value" t-value="count_value + 1"/>
+							<div class="form-check">
+								
+                                <input name="brand" t-att-id="'%s-%s' % (b.id,slug(b))" type="checkbox" class="form-check-input me-2" t-att-value="slug(b)" t-att-checked="'checked' if b.id in active_brand_list else None"/>
+
+								<!-- <label class="form-check-label fw-normal" t-att-for="'%s-%s' % (b.id,slug(b))" t-field="b.name"/> -->
+
+                                <label class="form-check-label" t-att-for="'%s-%s' % (b.id,slug(b))"><span itemprop="image" t-field="b.image" t-options='{"widget": "image", "resize": None if image else "90x90"}' t-att-alt="b.name" /></label>
+								
+                                <t t-if="is_view_active('theme_emart_plant.option_products_brands_count')">
+									<span class="product_count">
+										<span class="badge bg-primary rounded-pill">
+											<span>
+												<t t-out="b.with_context(product_brand_search=search).brand_count" />
+											</span>
+										</span>
+									</span>
+								</t>
+                                
+							</div>
+						</t>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+   
+    <template id="products_brands" inherit_id="theme_emart_plant.bizemart_attributes_inherited" active="False" customize_show="True" name="Brands">
+        
+        <xpath expr="//form" position="inside">
+            <div class="oe_structure"/>
+
+			<t t-call="theme_emart_plant.product_brand_filter_template">
+				<t t-set="button_classes" t-value="'h6 px-0 pb-0 mb-0'"/>
+				<t t-set="show_classes" t-value="'show'"/>
+			</t>
+            <div class="oe_structure"/>
+        </xpath>
+    </template>
+
+   
+   
+</odoo>

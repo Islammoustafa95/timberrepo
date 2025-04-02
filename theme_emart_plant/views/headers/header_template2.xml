@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<template id="theme_emart_plant_header2" inherit_id="website.layout" name="Header Two" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="biz-emart-shop-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="emart_header_style2" t-attf-class="emart_header_style_two navbar-light o_cc">
+				<div class="top-header d-none d-lg-block border-bottom">
+					<div class="container-fluid px-5">
+						<div class="row py-2">
+							<div class="header_left col-lg-3 col-xl-5 d-none d-md-flex">
+								<ul class="nav navbar-nav flex-row justify-content-md-end align-items-center">												
+									<t t-call="website.placeholder_header_language_selector">
+										<t t-set="_div_classes" t-valuef="my-auto ms-0" class="text-white"/>dropdown-toggle
+									</t>
+							
+									<li class="nav-item">
+										<div class="curruncy-selector">
+											<t t-call="theme_emart_plant.placeholder_biz_emart_header_pricelist"/> 
+										</div>
+									</li>									
+								</ul>								
+							</div>
+							<div class="header_right justify-content-end col-lg-9 col-xl-7 d-none d-md-flex">
+								<span class="welcome-text">Welcome to Our Store!</span>
+								<div class="top-navigation">
+									<ul class="menus d-flex">
+										<li class="menu-item">
+											<a href="/blog" class="nav-link ps-0">
+												<span class="fa fa-folder-open-o me-2"/>
+												<span>BLOG</span>
+											</a>
+										</li>
+										<li class="menu-item">
+											<a href="/help-center" class="nav-link">
+												<span class="fa fa-clone me-2"/>
+												<span>FAQ</span>
+											</a>
+										</li>
+										<li class="menu-item">
+											<a href="/contactus" class="nav-link">
+												<span class="fa fa-envelope-o me-2"/>
+												<span>CONTACT US</span>
+											</a>
+										</li>
+				                        <!-- User Dropdown -->
+										<t t-call="theme_emart_plant.theme_emart_plant_signin_main_template">
+											<t t-set="_myaccount_class" t-value="'d-flex align-items-center ms-auto position-relative'"/>
+											<t t-set="_icon" t-value="False"/>
+											<t t-set="_text" t-value="False"/>
+											<t t-set="_username" t-value="True"/>
+										</t>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header">
+					<div class="container-fluid px-3 px-md-5">
+						<div class="row align-items-center">
+							<div class="mobile-sidebar-toggle header_left col-md-12 col-lg-7 d-flex align-items-center">
+								<button type="button" id="show-sidebar" class="mobile-sidebar-toggle btn btn-md d-block d-lg-none">
+									<span class="ti ti-view-grid text-900"></span>
+								</button>
+								<div class="website-logo-left align-items-center d-flex justify-content-center justify-content-lg-start mx-auto mx-lg-0">
+								 <nav class="navbar p-0 d-block">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a></nav>
+								</div>
+								<t t-call="theme_emart_plant.bizemart_header_mobile_cart">
+									<t t-set="_class" t-value="'d-block d-lg-none'"/>
+								</t>
+								<nav class="navbar navbar-expand-lg p-0 ml24 w-lg-100" id="bizople-header-2">
+									<div class="collapse navbar-collapse ms-5" id="biz-emart-shop-header">
+										<t t-call="website.navbar_nav" id="top_menu">
+											<t t-set="_nav_class" t-valuef="me-auto"/>
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">                   
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</t>
+									</div>
+								</nav>
+							</div>
+							<div class="header_right col-md-4 col-lg-5 d-none d-lg-flex align-items-center justify-content-end">
+		                		<div class="header-search-btn">
+		                			<button type="button" class="ri ri-search-2-line align-middle"></button>
+								  	<div class="search-bar search-box">
+									  	<div class="search">
+											<t t-call="theme_emart_plant.desktop_search_bar" />
+										</div>
+								  	</div>
+								</div>
+								<div class="bizople-add-to-cart align-middle" id="">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item  list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+								<div class="wishlist align-middle">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item  list-unstyled'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-header d-none d-lg-block">
+					<div class="container-fluid px-0">
+						<div class="row align-items-center gx-0">
+							<div class="col-md-4">
+								<div class="header-service bg-primary op-8 text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-truck-line align-middle text-white"/>
+										<span class="ps-2 text-uppercase text">shipping and returns</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="header-service bg-primary text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-customer-service-line align-middle text-white"/>
+										<span class="ps-2 text-uppercase text">24/7 SERVICES</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="header-service bg-primary op-8 text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-service-line align-middle text-white"/>
+										<span class="ps-2 text-uppercase text">TRUSTED SERVICES</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-lg-none">
+				<t t-call="theme_emart_plant.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_emart_plant.bizople_mbl_category_bar"/>
+			<t t-call="theme_emart_plant.search_popup"/>
+		</xpath>
+	</template>
+
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="mega_menu_four_snippet" name="Mega Menu Two" groups="base.group_user">
+		<section class="mega_menu_one_snippet py-3 bg-white"
+			style="background-image: url(/theme_emart_plant/static/src/img/mega-menu-img-two.jpg); background-position: center;">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-3 mb16">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Plants By Name</a>
+							<ul>
+								<li><a class="menu_item" href="#">Money Plants</a></li>
+								<li><a class="menu_item" href="#">Jade Plants</a></li>
+								<li><a class="menu_item" href="#">Syngonium</a></li>
+							</ul>
+						</div>
+						<div class="heading-contents">
+							<a class="headeing" href="#">By Types</a>
+							<ul>
+								<li><a href="#" class="menu_item">All Plants</a></li>
+								<li><a href="#" class="menu_item">Artificial Plants</a></li>
+								<li><a href="#" class="menu_item">Desktop Plants</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3 mb16">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Others</a>
+							<ul>
+								<li><a href="#" class="menu_item">Same Day Plants</a></li>
+								<li><a href="#" class="menu_item">Flexon</a></li>
+								<li><a href="#" class="menu_item">Michael</a></li>
+							</ul>
+						</div>
+						<div class="heading-contents">
+							<a class="headeing" href="#">By Price</a>
+							<ul>
+								<li><a href="#" class="menu_item">Premium Plants</a></li>
+								<li><a href="#" class="menu_item">Best Seller</a></li>
+								<li><a href="#" class="menu_item">New Arrivals</a></li>
+								<li><a href="#" class="menu_item">Above 999</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3 mb16">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Plants Cities</a>
+							<ul>
+								<li><a href="#" class="menu_item">Delhi</a></li>
+								<li><a href="#" class="menu_item">Ahmedabad</a></li>
+								<li><a href="#" class="menu_item">Surat</a></li>
+							</ul>
+						</div>
+						<div class="heading-contents">
+							<a class="headeing" href="#">Sizes</a>
+							<ul>
+								<li><a href="#" class="menu_item">12 cm</a></li>
+								<li><a href="#" class="menu_item">14 cm</a></li>
+								<li><a href="#" class="menu_item">16 cm</a></li>
+								<li><a href="#" class="menu_item">18 cm</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3 mb16">
+						<div class="heading-contents">
+							<a class="headeing" href="#">Explore</a>
+							<ul>
+								<li><a href="#" class="menu_item">Monthly</a></li>
+								<li><a href="#" class="menu_item">Daily</a></li>
+								<li><a href="#" class="menu_item">Yearly</a></li>
+							</ul>
+						</div>
+						<div class="heading-contents">
+							<a class="headeing" href="#">Colors</a>
+							<ul>
+								<li><a href="#" class="menu_item">Green</a></li>
+								<li><a href="#" class="menu_item">Blue</a></li>
+								<li><a href="#" class="menu_item">Black</a></li>
+								<li><a href="#" class="menu_item">Brown</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</template>
+</odoo>
